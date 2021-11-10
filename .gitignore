@@ -1,0 +1,7 @@
+__pycache__
+db*
+sbenv/
+venv/
+.git
+git
+000*
