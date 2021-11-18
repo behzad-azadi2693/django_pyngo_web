@@ -1,4 +1,10 @@
 {% load static %}
+{% load notifications_tags %}
+{% notifications_unread as unread_count %}
+
+{% url 'pyngo:index' as index%}
+{% url 'pyngo:services' as services%}
+
 <header>
     <div class="top-bar bg-primary">
       <div class="container">
@@ -7,6 +13,18 @@
             <div class="d-inline-block">
               <span class="mai-mail fg-light"></span> <a href="mailto:contact@mail.com" class="fg-light">contact@mail.com</a>
             </div>
+            {% if request.user.is_authenticated and request.user.is_admin %}
+            <div class="d-inline-block">
+              <a href="{% url 'pyngo:all_notifications' %}" class="fg-light">
+                <span class="mai-notifications ml-3 fg-danger"></span> 
+                {% if unread_count > 0 %}
+                  {{ unread_count }}
+                {% else %}
+                  0
+                {% endif %}
+              </a>
+            </div>
+            {% endif %}
             <div class="d-inline-block ml-2">
             </div>
           </div>
@@ -24,7 +42,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light" style="direction: rtl;" id="navbar_top">
       <div class="container">
-        <a href="{% url 'pyngo:index' %}" class="navbar-brand"><img src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>
+        <a href="{{index}}" class="navbar-brand"><img src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,14 +50,14 @@
 
         <div class="navbar-collapse collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
-            <li class="nav-item active">
-              <a href="index.html" class="nav-link">صفحه اصلی</a>
+            <li class="nav-item {% if request.path == index %}active{% endif %}">
+              <a href="{{ index }}" class="nav-link">صفحه اصلی</a>
             </li>
             <li class="nav-item">
                 <a href="portfolio.html" class="nav-link">آموزش</a>
               </li>
-            <li class="nav-item">
-              <a href="services.html" class="nav-link">خدمات</a>
+            <li class="nav-item {% if request.path == services %}active{% endif %}">
+              <a href="{{services}}" class="nav-link">خدمات</a>
             </li>
             <li class="nav-item">
                 <a href="blog.html" class="nav-link">نمونه کارها</a>

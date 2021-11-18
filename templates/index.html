@@ -6,13 +6,14 @@
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
-  <div class="home-banner m-2 bg-primary">
+    <div class="page-banner m-3 bg-img bg-img-parallax" style="background-image: url({% static '/assets/img/python3.png' %}); height:40%;">
         <div class="row">
-        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
-        <div class="col-lg-6 col-sm-12">
-           
-          
-        </div>
+          <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+          <div class="col-lg-6 col-sm-12" style="direction:rtl;">
+            <h1 class="bg-primary mt-5 text-center">طراحی وب سایت</h1>
+            <p class="m-3 fg-light  text-justify">گروه طراحی پینگو وب دارای تیم متخصص و حرفه ای با سابقه درخشان در زمینه برنامه نویسی و طراحی گرافیک با ارائه خدمات طراحی سایت و سئو در سطح بالاترین کیفیت و استاندارهای برنامه نویسی مطابق با الگوریتم های گوگل توانسته است با افتخار رضایت تمام مشتریان خود را جلب و جایگاه قابل توجهی در میان شرکت ها و موسسات کسب نماید.
+            </p>
+          </div>
         </div>
   </div> <!-- .page-banner -->
 
@@ -32,7 +33,7 @@
 
             <p style="text-align:justify;"> با ما درباره کسب و کار خود صحبت کنید تا ما به شما بگوییم چگونه می توانید کسب و کار خود را توسعه و با چالش های آن آشنا گردید ما میتوانیم گزارش کاملی را برای شما و کسب و کارتان تهیه کنیم به شما ایده دهیم یا ایده های شمارو به شیوه بهتری توسعه دهیم</p>
 
-            <a href="about.html" class="btn btn-primary mt-4">اطلاعات بیشتر</a>
+            <a href="{% url 'pyngo:services' %}" class="btn btn-primary mt-4">اطلاعات بیشتر</a>
           </div>
         
         </div>
@@ -53,7 +54,6 @@
                 <img src="{% static 'assets/img/icons/web_development.svg' %}" alt="">
               </div>
               <h5>طراحی سایت</h5>
-              <p style="text-align:justify; direction:rtl">طراحی سایت حرفه ای با بالاترین کیفیت و استاندارد برنامه نویسی بدیهی است طراحی، یک بخش کلیدی از ” طراحی سایت ” است. این دقیقا به چه معنی است؟ طراحی شامل هم اصول طراحی، تعادل، کنتراست، تاکید، ریتم و وحدت و هم عناصر طراحی – خطوط، اشکال، بافت، رنگ و جهت است. با قرار دادن این چیزها با یکدیگر، طراح وب سایت، وب سایت ها را ایجاد می کند، اما یک طراح وب خوب، نه تنها اصول طراحی، بلکه محدودیت های وب را نیز درک می کند.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
@@ -62,17 +62,15 @@
                 <img src="{% static 'assets/img/icons/graphics_design.svg' %}" alt="">
               </div>
               <h5>طراحی لوگو و آرم</h5>
-              <p style="text-align:justify; direction:rtl">طراحی لوگو و طراحی آرم شخصی یا شرکتی به صورت تخصصی و حرفه ای طراحی لوگو و طراحی آرم مزیتی است که در زمانی که شما می خواهید کسب و کار خود را ارتقا ببخشید، به کمک شما می آید. و به طراحی سایت شما در زیبا شدن کمک می کند در جهان امروز که شبکه های اجتماعی غوغا می کنند و همچنین در بازاریابی نیز بسیار مهم است، داشتن لوگو سایت و آرم سایت تجاری مناسب بسیار موثر و خوب است. لوگو می تواند ارتباط لازم را میان ذهن مشتری و برند ایجاد کند.</p>
             </div>
           </div>
-
+  
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
                 <img src="{% static 'assets/img/icons/seo_and_marketing.svg' %}" alt="">
               </div>
               <h5>سئو و بهینه سازی سایت</h5>
-              <p style="text-align:justify; direction:rtl">سئو و بهینه سازی سایت به صورت حرفه ای و مطابق با الگوریتم های گوگل سئو بهینه سازی موتور جستجو تضمین می کند که وب سایت ها برای گوگل و دیگر موتورهای جستجو جذاب هستند و افرادی که محصولات، خدمات یا ویژگی های اطلاعاتی را در آن سایت جستجو می کنند می توانند آن را پیدا کنند. سئو سایت و طراحی وب سایت را می‌توان مجموعه‌ای از روش‌ها و استاندراد ها برای ارتقا و رشد وب سايت ها در فضای مجازی اينترنت دانست. سئو بزرگترين خدمات برای كسب و كار میباشد.</p>
 
             </div>
           </div>
@@ -83,7 +81,6 @@
                 <img src="{% static 'assets/img/icons/app_development.svg' %}" alt="">
               </div>
               <h5>طراحی موبایل اپلیکیشن</h5>
-              <p style="text-align:justify; direction:rtl">طراحی اپلیکیشن موبایل هوشمند به صورت حرفه ای و برنامه نویسی تخصصی اپلیکیشن ‌های موبایل بخش بزرگی از زندگی روزمره‌ی هم مشتریان و هم صاحبان تجارت هستند. تقریبا همه مدت زمانی را در طول روز صرف موبایل خود می‌کنند بسیار خب، برای بعضی از ما این مدت زمان خیلی زیاد است. بیشتر این زمان در اپلیکیشن‌های مختلف گذرانده می‌شود. وقتی‌ که یک کسب و کار قادر است طراحی اپلیکیشن موبایلی پیشنهاد دهد که تمام خدمات قدم جلوتر می‌برد.</p>
             </div>
           </div>
 
@@ -93,7 +90,6 @@
                 <img src="{% static 'assets/img/icons/ui_ux_design.svg' %}" alt="">
               </div>
               <h5>UI/UX طراحی</h5>
-              <p style="text-align:justify; direction:rtl"></p>
             </div>
           </div>
 
@@ -103,7 +99,6 @@
                 <img src="{% static 'assets/img/icons/product_design.svg' %}" alt="">
               </div>
               <h5>برند سازی</h5>
-              <p style="text-align:justify; direction:rtl"> برند سازی کسب کار شما به صورت کاملا هدفمند و برنامه ریزی شده برندسازی فراتر از تنها یک لوگو یا عنصر گرافیکیست. زمانیکه درباره ی برندتان فکر می کنید، در واقع می خواهید درباره ی تمام تجربه ی مشتریانتان بیندیشید همه چیز گرفته از لوگو ، طراحی سایت ، تجارب رسانه های اجتماعی شما، نحوه ای که تلفن را پاسخ می دهید تا نحوه ای که مشتریانتان کارکنان شما را تجربه می کنند. برند شما نحوه ایست که مشتریانتان و طرفدارانتان در سراسر جهان شما را میبیند.</p>
             </div>
           </div>
 
@@ -114,11 +109,11 @@
     <div class="page-section">
       <div class="container">
         <div class="text-center">
-          <div class="subhead">طرح های طراحی سایت<div>
+          <div class="subhead">پلن های طراحی سایت<div>
           <h2 class="title-section">تعرفه های مختلف</h2>
         </div>
 
-        <div class="owl-carousel team-carousel mt-5">
+        <div class="owl-carousel team-carousel mt-5"> 
           <div class="team-wrap">
             <div class="team-profile">
               <img src="{% static 'assets/img/big.png' %}" alt="">
@@ -176,21 +171,21 @@
           <p>کافیست شماره خود را ثبت کنید تا  با شما تماس بگیریم </p>
         </div>
         <div class="row justify-content-center mt-5">
-          <div class="col-lg-8">
-            <form action="#" class="form-contact">
-              <div class="row">
-                <div class="col-12 py-2">
+          <div class="col-lg-2 col-sm-12"></div>
+          <div class="col-lg-8 col-sm-12 ">
+            <form action="{% url 'pyngo:contact' %}" method="POST" class="form-contact" novalidate>
+                {% csrf_token %}
+                <div class="col-lg-8 col-sm-12 py-2">
                   <label for="name" class="fg-grey">نام و نام خانودگی</label>
-                  <input type="text" class="form-control text-right" id="name" placeholder="...نام">
+                  <input type="text" name="name" class="form-control text-right" id="name" placeholder="...نام">
                 </div>
-                <div class="col-12 py-2">
+                <div class="col-lg-8 col-sm-12 py-2">
                   <label for="tel" class="fg-grey">شماره تماس</label>
-                  <input type="tel" class="form-control" id="tel" placeholder="09120000000">
+                  <input type="tel" name="phone" class="form-control" id="tel" placeholder="09120000000">
                 </div>
                 <div class="col-12 mt-3">
                   <button type="submit" style="float:left; direction:ltr; position: left;" class="btn btn-primary px-5">ارسال</button>
                 </div>
-              </div>
             </form>
           </div>
         </div>
@@ -201,19 +196,19 @@
       <div class="container-fluid">
         <div class="row row-cols-md-3 row-cols-lg-5 justify-content-center text-center">
           <div class="py-3 px-5">
-            <img src="../assets/img/clients/airbnb.png" alt="">
+            <img src="{% static 'assets/img/clients/airbnb.png' %}" alt="">
           </div>
           <div class="py-3 px-5">
-            <img src="../assets/img/clients/google.png" alt="">
+            <img src="{% static 'assets/img/clients/google.png' %}" alt="">
           </div>
           <div class="py-3 px-5">
-            <img src="../assets/img/clients/mailchimp.png" alt="">
+            <img src="{% static 'assets/img/clients/mailchimp.png' %}" alt="">
           </div>
           <div class="py-3 px-5">
-            <img src="../assets/img/clients/paypal.png" alt="">
+              <img src="{% static 'assets/img/clients/paypal.png' %}" alt="">
           </div>
           <div class="py-3 px-5">
-            <img src="../assets/img/clients/stripe.png" alt="">
+            <img src="{% static 'assets/img/clients/stripe.png' %}" alt="">
           </div>
         </div>
       </div> <!-- .container-fluid -->
@@ -221,15 +216,3 @@
 
   </main>
 {% endblock %}
-
-{% block javascript %}
-<script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
-<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'assets/vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'assets/vendor/wow/wow.min.js' %}"></script>
-<script src="{% static 'assets/vendor/fancybox/js/jquery.fancybox.min.js' %}"></script>
-<script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script>
-<script src="{% static 'assets/js/google-maps.js' %}"></script>
-<script src="{% static 'assets/js/theme.js' %}"></script>
-{% endblock %}
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script> -->

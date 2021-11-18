@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #local
     'Pyngo.apps.PyngoConfig',
+    'accounts.apps.AccountsConfig',
+    #3d
+    'notifications',
+    'jalali_date',
 ]
 
 MIDDLEWARE = [
@@ -115,6 +119,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKEND = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+    'accounts.authentiacte.PhoneLoginBackend',
+)
+AUTH_USER_MODEL = 'accounts.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -141,6 +150,7 @@ STATICFILES_DIRS = [
     os.path.join('assets')
 ]
 
+
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join('media')
@@ -150,3 +160,30 @@ MEDIA_ROOT = os.path.join('media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DJANGO_NOTIFICATIONS_CONFIG = {
+      'USE_JSONFIELD': True,
+}
+
+JALALI_DATE_DEFAULTS = {
+   'Strftime': {
+        'date': '%y/%m/%d',
+        'datetime': '%H:%M:%S _ %y/%m/%d',
+    },
+    'Static': {
+        'js': [
+            # loading datepicker
+            'admin/js/django_jalali.min.js',
+            # OR
+            # 'admin/jquery.ui.datepicker.jalali/scripts/jquery.ui.core.js',
+            # 'admin/jquery.ui.datepicker.jalali/scripts/calendar.js',
+            # 'admin/jquery.ui.datepicker.jalali/scripts/jquery.ui.datepicker-cc.js',
+            # 'admin/jquery.ui.datepicker.jalali/scripts/jquery.ui.datepicker-cc-fa.js',
+            # 'admin/js/main.js',
+        ],
+        'css': {
+            'all': [
+                'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css',
+            ]
+        }
+    },
+}

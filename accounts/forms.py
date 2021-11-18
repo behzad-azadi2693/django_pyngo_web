@@ -15,7 +15,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         models = get_user_model()
-        fields = ('username', 'password', 'password_confierm')
+        fields = ('phone', 'password', 'password_confierm')
 
     def clean_password_confierm(self):
         cd = self.cleaned_data
@@ -35,7 +35,7 @@ class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField()
     class Meta:
         models = get_user_model()
-        fields = ('username', 'password')
+        fields = ('phone', 'password')
 
     def clean_password(self):
         return self.initial['password']

@@ -1,8 +1,9 @@
+{% load static %}
 <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 py-3">
-          <h3>Reve<span class="fg-primary">Tive.</span></h3>
+          <a href="{% url 'pyngo:index' %}" ><img src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="200" height="50"></a>
         </div>
         <div class="col-lg-3 py-3">
           <h5>Contact Information</h5>
@@ -18,20 +19,14 @@
             <li><a href="#">News & Feed</a></li>
           </ul>
         </div>
-        <div class="col-lg-3 py-3">
-          <h5>Newsletter</h5>
-          <form action="#">
-            <input type="text" class="form-control" placeholder="Enter your email">
-            <button type="submit" class="btn btn-primary btn-sm mt-2">Submit</button>
-          </form>
-        </div>
+        
       </div>
 
       <hr>
 
       <div class="row mt-4">
         <div class="col-md-6">
-          <p>Copyright 2020. This template designed by <a href="https://macodeid.com">MACode ID</a></p>
+          <p>طراحی و ساخت از شرکت فنی و مهندسی <a href="{% url 'pyngo:index' %}">پینگو وب</a></p>
         </div>
         <div class="col-md-6 text-right">
           <div class="sosmed-button">

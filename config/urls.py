@@ -17,10 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+import notifications.urls
+from django.conf.urls import url
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Pyngo.urls'))
+    path('', include('Pyngo.urls')),
+    url('^inbox/notifications/', include(notifications.urls, namespace='notifications')),
 ]
 
 if settings.DEBUG:
