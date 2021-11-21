@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render, Http404
-from .forms import ContactForm
+from .forms import ContactForm, ContactUsForm
 # Create your views here.
 from django.contrib import messages
 from notifications.signals import notify
@@ -54,3 +54,24 @@ def all_notifications(request):
         }
         
         return render(request, 'notify.html', context)
+
+def about_us(request):
+    return render(request, 'about.html')
+
+def portfolio(request):
+    return render(request, 'portfolio.html')
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactUsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'پیغام شما ارسال شد منتظر تماس از جانب تیم پیمگو وب باشید', 'primary')
+            return redirect('pyngo:contact_us')
+        else:
+            form = ContactUsForm(request.POST)
+            messages.success(request, 'لطفا در پر کردن فیلدها دقت فرمایید', 'warning')
+            return render(request, 'contact.html', {'form':form})
+    else:
+        form = ContactUsForm(request.POST)
+        return render(request, 'contact.html', {'form':form})

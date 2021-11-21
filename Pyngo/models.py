@@ -17,6 +17,22 @@ class Contact(models.Model):
         return f'{self.name}-{self.phone}'
 
 
+class ContactUs(models.Model):
+    name = models.CharField(max_length=100, verbose_name='نام')
+    email = models.EmailField(verbose_name='ایمیل')
+    subject = models.CharField(max_length=300, verbose_name='موضوع')
+    message = models.TextField(verbose_name='پیغام')
+    date = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'پیغام'
+        verbose_name_plural = 'پیغام ها'
+        ordering = ('-id',)
+
+    def __str__(self) -> str:
+        return f'{self.name}-{self.email}'
+
+
 class Question(models.Model):
     question = models.CharField(max_length=200, verbose_name='سوال')
     answer = models.TextField(verbose_name='پاسخ')

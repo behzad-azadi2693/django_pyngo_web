@@ -6,15 +6,28 @@
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
-    <div class="page-banner m-3 bg-img bg-img-parallax" style="background-image: url({% static '/assets/img/python3.png' %}); height:40%;">
-        <div class="row">
-          <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
-          <div class="col-lg-6 col-sm-12" style="direction:rtl;">
-            <h1 class="bg-primary mt-5 text-center">طراحی وب سایت</h1>
-            <p class="m-3 fg-light  text-justify">گروه طراحی پینگو وب دارای تیم متخصص و حرفه ای با سابقه درخشان در زمینه برنامه نویسی و طراحی گرافیک با ارائه خدمات طراحی سایت و سئو در سطح بالاترین کیفیت و استاندارهای برنامه نویسی مطابق با الگوریتم های گوگل توانسته است با افتخار رضایت تمام مشتریان خود را جلب و جایگاه قابل توجهی در میان شرکت ها و موسسات کسب نماید.
-            </p>
+    <div class="page-banner ml-3 mr-3 bg-img bg-img-parallax" style="background-image: url({% static '/assets/img/python3.png' %}); height:40%;">
+      <div class="row">
+        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+        <div class="col-lg-6 col-sm-12" style="direction:rtl;">
+          <h5 class="bg-primary col-6 mt-5 text-right">  وب سایت پینگو وب</h5>
+          <p class="m-3 fg-light  text-justify">گروه طراحی پینگو وب دارای تیم متخصص و حرفه ای با سابقه درخشان در زمینه برنامه نویسی و طراحی گرافیک با ارائه خدمات طراحی سایت و سئو در سطح بالاترین کیفیت و استاندارهای برنامه نویسی مطابق با الگوریتم های گوگل توانسته است با افتخار رضایت تمام مشتریان خود را جلب و جایگاه قابل توجهی در میان شرکت ها و موسسات کسب نماید.
+          </p>
+        </div>
+      </div>
+      <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-lg-8" style="direction: rtl;">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
+                <li class="breadcrumb-item"><a href="{% url 'pyngo:index' %}">صفحه اصلی</a></li>
+              </ol>
+            </nav>
+            <h1 class="fg-white text-center"> طراحی وب سایت پینگو وب</h1>
           </div>
         </div>
+      </div>
+    </div
   </div> <!-- .page-banner -->
 
   <main>
@@ -33,7 +46,7 @@
 
             <p style="text-align:justify;"> با ما درباره کسب و کار خود صحبت کنید تا ما به شما بگوییم چگونه می توانید کسب و کار خود را توسعه و با چالش های آن آشنا گردید ما میتوانیم گزارش کاملی را برای شما و کسب و کارتان تهیه کنیم به شما ایده دهیم یا ایده های شمارو به شیوه بهتری توسعه دهیم</p>
 
-            <a href="{% url 'pyngo:services' %}" class="btn btn-primary mt-4">اطلاعات بیشتر</a>
+            <a href="{% url 'pyngo:about_us' %}" class="btn btn-primary mt-4">اطلاعات بیشتر</a>
           </div>
         
         </div>
