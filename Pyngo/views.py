@@ -61,7 +61,7 @@ def about_us(request):
 def portfolio(request):
     return render(request, 'portfolio.html')
 
-def contact(request):
+def contact_us(request):
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
         if form.is_valid():
@@ -73,5 +73,5 @@ def contact(request):
             messages.success(request, 'لطفا در پر کردن فیلدها دقت فرمایید', 'warning')
             return render(request, 'contact.html', {'form':form})
     else:
-        form = ContactUsForm(request.POST)
+        form = ContactUsForm()
         return render(request, 'contact.html', {'form':form})

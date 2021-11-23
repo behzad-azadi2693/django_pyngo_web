@@ -6,7 +6,7 @@
 {% url 'pyngo:services' as services%}
 {% url 'pyngo:about_us' as about_us%}
 {% url 'pyngo:portfolio' as portfolio%}
-{% url 'pyngo:contact' as contact%}
+{% url 'pyngo:contact_us' as contact_us%}
 
 <header>
     <div class="top-bar bg-primary">
@@ -45,7 +45,13 @@
 
     <nav class="navbar navbar-expand-lg navbar-light" style="direction: rtl;" id="navbar_top">
       <div class="container">
-        <a href="{{index}}" class="navbar-brand"><img src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>
+        <a href="{{index}}" class="navbar-brand"><img ￼
+          این فیلد لازم است.
+          پیغام￼
+          این فیلد لازم است.
+          ￼ارسال
+          ￼
+          src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -63,8 +69,8 @@
             <li class="nav-item {% if request.path == portfolio %}active{% endif %}">
                 <a href="{{portfolio}}" class="nav-link">نمونه کارها</a>
             </li>
-            <li class="nav-item {% if request.path == contact %}active{% endif %}">
-                <a href="{{contact}}" class="nav-link">تماس با ما</a>
+            <li class="nav-item {% if request.path == contact_us %}active{% endif %}">
+                <a href="{{contact_us}}" class="nav-link">تماس با ما</a>
             </li>
             <li class="nav-item {% if request.path == about_us %}active{% endif %}">
                 <a href="{{about_us}}" class="nav-link">درباره ما</a>
