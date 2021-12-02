@@ -58,8 +58,8 @@ def all_notifications(request):
 def about_us(request):
     return render(request, 'about.html')
 
-def portfolio(request):
-    return render(request, 'portfolio.html')
+#def portfolio(request):
+#    return render(request, 'portfolio.html')
 
 def contact_us(request):
     if request.method == 'POST':

@@ -1,22 +1,22 @@
 {% load static %}
 <footer class="page-footer">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-3 py-3">
+      <div class="row" >
+        <div class="col-lg-4 py-3">
           <a href="{% url 'pyngo:index' %}" ><img src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="200" height="50"></a>
         </div>
-        <div class="col-lg-3 py-3">
-          <h5>Contact Information</h5>
-          <p>301 The Greenhouse, Custard Factory, London, E2 8DY.</p>
-          <p>Email: example@mail.com</p>
-          <p>Phone: +00 112323980</p>
+        <div class="col-lg-4 py-3" style='direction:rtl'>
+          <p class='h4'>آدرس و ارتباط با پینگو وب</p>
+          <p style='text-align:justify'>سنندج - میدان انقلاب - خیابان امام - مجتمع خرمی - طبقه دوم - شرکت فنی و مهندسی پینگو وب </p>
+          <p> ایمیل : <a href="gmail:contact@gmail.com" >example@mail.com</a></p>
+          <p> تلفن : <a href="tel:08733178466">087-33178466</a></p>
         </div>
-        <div class="col-lg-3 py-3">
-          <h5>Company</h5>
+        <div class="col-lg-4 py-3" >
+          <h5>شرکت فنی و مهندسی</h5>
           <ul class="footer-menu">
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Resources</a></li>
-            <li><a href="#">News & Feed</a></li>
+            <li><a href="{% url 'pyngo:index' %}">pyngoweb.ir</a></li>
+            <li><a >خصوصی</a></li>
+            <li><a >حقوقی</a></li>
           </ul>
         </div>
         

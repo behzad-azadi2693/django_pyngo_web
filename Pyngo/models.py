@@ -32,10 +32,3 @@ class ContactUs(models.Model):
     def __str__(self) -> str:
         return f'{self.name}-{self.email}'
 
-
-class Question(models.Model):
-    question = models.CharField(max_length=200, verbose_name='سوال')
-    answer = models.TextField(verbose_name='پاسخ')
-
-    def __str__(self) -> str:
-        return f'{self.question}'

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, contact,services, all_notifications, about_us, portfolio, contact_us
+from .views import index, contact,services, all_notifications, about_us, contact_us
 
 app_name = 'pyngo'
 
@@ -9,6 +9,5 @@ urlpatterns = [
     path('services/', services, name='services'),
     path('all/notifications/', all_notifications, name='all_notifications'),
     path('about/us/', about_us, name='about_us'),
-    path('portfolio/', portfolio, name='portfolio'),
     path('contact/us/', contact_us, name='contact_us'),
 ]
