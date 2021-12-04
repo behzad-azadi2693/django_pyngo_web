@@ -39,9 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #local
-    'Pyngo.apps.PyngoConfig',
-    'accounts.apps.AccountsConfig',
     #3d
     'notifications',
     'jalali_date',
