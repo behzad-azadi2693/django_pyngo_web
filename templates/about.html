@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
+{% block title %} | درباره ما {% endblock %}
 
 {% block body %}
+{% if LANGUAGE_CODE == 'fa' %}
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
   <header>
     <div class="page-banner ml-3 mr-3 bg-img bg-img-parallax" style="background-image: url({% static 'assets/img/about.png' %});height:30%;">
       <div class="row">
-        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="background image">
         <div class="col-lg-6 col-sm-12" style="direction:rtl;">
           <h5 class="bg-primary col-6 mt-5 text-right">درباره پینگو وب</h5>
           <p class="m-3 fg-light  text-justify">گروه طراحی پینگو وب دارای تیم متخصص و حرفه ای با سابقه درخشان در زمینه برنامه نویسی و طراحی گرافیک با ارائه خدمات طراحی سایت و سئو در سطح بالاترین کیفیت و استاندارهای برنامه نویسی مطابق با الگوریتم های گوگل توانسته است با افتخار رضایت تمام مشتریان خود را جلب و جایگاه قابل توجهی در میان شرکت ها و موسسات کسب نماید.
@@ -47,47 +51,118 @@
               <div class="col-lg-6 py-3">
 
                 <div class="about-img">
-                  <img src="{% static 'assets/img/team.png' %}" alt="">
+                  <img src="{% static 'assets/img/team.png' %}" alt="about team">
                 </div>
               </div>
               <div class="col-lg-6 py-3">
                 <div class="subhead" style="position:right;float:right">درباره ما</div> <br>
-                <h2 class="title-section">ما <span class="fg-primary">یک تیم جوان</span> برای رشد کسب و کار شما هستیم</h2>
+                <h2 class="title-section"> شرکت فنی مهندسی<span class="fg-primary"> پینگو وب</span> رشد کسب و کار در بستر اینترنت</h2>
 
-                <p style="text-align:justify;"> با ما درباره کسب و کار خود صحبت کنید تا ما به شما بگوییم چگونه می توانید کسب و کار خود را توسعه و با چالش های آن آشنا گردید ما میتوانیم گزارش کاملی را برای شما و کسب و کارتان تهیه کنیم به شما ایده دهیم یا ایده های شمارو به شیوه بهتری توسعه دهیم</p>
+                <p style="text-align:justify;">
+                 امروزه با فراگیری تکنولوژی های نوین و هوشمند و به واسطه آن افزایش ارتباطات در پهنه وسیعتری از جغرافیا و سهولت ارتباطات روز به روز شاهد رشد کسب و کارهای اینترنتی و ایجاد شغل و سرگرمی در یک بازار غیر محدود و فراگیر برای خلق هرچه بهتر 
+                 ایده ها معرفی کسب و کارها خواهیم بود و شاهد ناکارامدی بازارها و شیوه های سنتی هستیم ,متخصصین تکنولوژی نرم افزار شرکت فنی و مهندسی پینگو وب در زمینه رشد کسب و کار و ایده های شما آماده برای مشاوره و راهنمایی شما هموطنان عزیز و توسعه کسب و کار شما هستند
+                </p>
 
               </div>
-
+              
             </div>
           </div>
         </div> <!-- .page-section -->
-        <div class="owl-carousel team-carousel mt-5" style='direction:rtl'>
-          <p>متن اینجا</p>
+        <div class="owl-carousel team-carousel mt-5" style='direction:rtl;text-align: justify;'>
+            شرکت فنی و مهندسی پینگو وب
+            قصد دارد همراه شما، فصلی نو در کسب و کارهای دیجیتالی ایران آغاز کند. رویکردی نو که از کسب و کارها می‌خواهد دیدی طولانی‌مدت داشته باشند. دیدی که درآمد امروز و راهکارهای کوتاه‌مدت تبلیغاتی را با کیفیت،
+             شفافیت، آموزش و صمیمیت پیوند می‌زند. نگاهی که بر ایجاد روابط پایدار با مشتری‌ها تاکید دارد.
+        </div>
+
+        <div class="owl-carousel team-carousel mt-5" style='direction:rtl;text-align: justify;'>
+            کسب و کار شما می‌تواند رشد کند. درآمد شما می‌تواند چند برابر شود. فقط کافی است مسیر درست را بشناسید. کافی است یاد بگیرید تا مشتریان خود را در زمان درست، مکان درست و به روش درست هدف قرار دهید. ما در این مسیر همراه شما هستیم.
+        </div>
 
         </div>
       </div> <!-- .container -->
     </div> <!-- .page-section -->
 
     <div class="page-section">
-      <div class="container-fluid">
-        <div class="row row-cols-md-3 row-cols-lg-5 justify-content-center text-center">
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/airbnb.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/google.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/mailchimp.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/paypal.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/stripe.png" alt="">
+    
+  </main>
+  {% endif %}
+  {% if LANGUAGE_CODE == 'en' %}
+<!-- Back to top button -->
+<div class="back-to-top"></div>
+
+<header>
+  <div class="page-banner ml-3 mr-3 bg-img bg-img-parallax" style="background-image: url({% static 'assets/img/about.png' %});height:30%;">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <h5 class="bg-primary col-6 mt-5 text-right">about pyngo web</h5>
+        <p class="m-3 fg-light  text-justify">
+          Pingo Web Design Group has a professional team with a brilliant background in the field of programming and graphic design by providing site design and SEO services at the highest quality and programming standards in accordance with Google algorithms has been able to proudly satisfy all its customers. And gain a significant position among companies and institutions.
+        </p>
+      </div>
+      <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="background image">
+
+    </div>
+    <div class="container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-lg-8" >
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
+              <li class="breadcrumb-item"><a href="{% url 'pyngo:index' %}"> home page</a></li>
+              <li class="breadcrumb-item active" aria-current="page">About us</li>
+            </ol>
+          </nav>
+          <h1 class="fg-white text-center">About Pyngo Web</h1>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .page-banner -->
+</header>
+
+<main>
+  
+
+  <div class="page-section">
+    <div class="container">
+      <div class="text-center">
+        <div class="subhead"> pyngo web</div>
+        <h1 class="title-section">Web design with pyngoweb</h1>
+      </div>
+      <div >
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 py-3">
+
+              <div class="about-img">
+                <img src="{% static 'assets/img/team.png' %}" alt="about team">
+              </div>
+            </div>
+            <div class="col-lg-6 py-3">
+              <div class="subhead">About us</div> <br>
+              <h2 class="title-section"> <span class="fg-primary">Pyngo web</span> Engineering Company Business growth on the Internet</h2>
+
+              <p class='text-justify'>
+                Today, with the acquisition of new and intelligent technologies and through it, the increase of communication in a wider area of geography and the ease of communication, we are witnessing the growth of Internet businesses and job creation and entertainment in an unlimited and inclusive market to create better ideas. We will be businesses and we will witness the inefficiency of markets and traditional methods. The software technology experts of Pingo Web Technical and Engineering Company in the field of business growth and your ideas are ready to advise and guide you, dear compatriots, and develop your business.
+              </p>
+
+            </div>
+            
           </div>
         </div>
-      </div> <!-- .container-fluid -->
-    </div> <!-- .page-section -->
-  </main>
+      </div> <!-- .page-section -->
+      <div class="owl-carousel team-carousel mt-5 text-justify">
+        Pingo Web Technical and Engineering Company intends to start a new chapter in Iran's digital businesses with you. A new approach that requires businesses to have a long-term vision. A vision that combines today's revenue and short-term advertising strategies with quality, transparency, education and intimacy. A vision that emphasizes building lasting relationships with customers.
+      </div>
+
+      <div class="owl-carousel team-carousel mt-5 text-justify" >
+        Your business can grow. Your income can be multiplied. It is enough to know the right path. Just learn to target your customers at the right time, in the right place and in the right way. We are with you on this path.
+      </div>
+
+      </div>
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+
+  <div class="page-section">
+  
+</main>
+  {% endif %}
 {% endblock %}

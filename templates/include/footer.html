@@ -1,5 +1,10 @@
 {% load static %}
-<footer class="page-footer">
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% if LANGUAGE_CODE == 'fa' %}
+
+<footer class="page-footer text-right">
     <div class="container">
       <div class="row" >
         <div class="col-lg-4 py-3">
@@ -7,9 +12,11 @@
         </div>
         <div class="col-lg-4 py-3" style='direction:rtl'>
           <p class='h4'>آدرس و ارتباط با پینگو وب</p>
-          <p style='text-align:justify'>سنندج - میدان انقلاب - خیابان امام - مجتمع خرمی - طبقه دوم - شرکت فنی و مهندسی پینگو وب </p>
-          <p> ایمیل : <a href="gmail:contact@gmail.com" >example@mail.com</a></p>
-          <p> تلفن : <a href="tel:08733178466">087-33178466</a></p>
+          <p style='text-align:justify'><span class="mai-location fg-danger p-2"></span>سنندج - میدان انقلاب - خیابان امام - مجتمع خرمی - طبقه دوم - شرکت فنی و مهندسی پینگو وب </p>
+          <p><span style="float:right" class="mai-mail fg-danger"></span> <a href="gmail:pyngoweb@gmail.com" class="fg-primary p-2">pyngoweb@gmail.com</a></p>
+
+          <p><span style="float:right" class="mai-call fg-danger"> </span>  <a href="tel:08733178466" class="fg-primary p-2"> 087-33178466</a></p>
+
         </div>
         <div class="col-lg-4 py-3" >
           <h5>شرکت فنی و مهندسی</h5>
@@ -39,3 +46,46 @@
       </div>
     </div>
   </footer>
+ {% endif %}
+
+{% if LANGUAGE_CODE == 'en' %}
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 py-3">
+        <a href="{% url 'pyngo:index' %}" ><img src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="200" height="50"></a>
+      </div>
+      <div class="col-lg-4 py-3">
+        <h5>Contact Information</h5>
+        <p><span class="mai-location fg-danger p-2"></span> Iran, kurdestan, Sananndaj, Revolution Square, Imam Street</p>
+        <p><span class="mai-mail fg-danger"></span> <a href="gmail:pyngoweb@gmail.com" class="fg-primary p-2">pyngoweb@gmail.com</a></p>
+
+          <p><span class="mai-call fg-danger"> </span>  <a href="tel:+989188688569" class="fg-primary p-2"> +989188688569</a></p>
+
+      </div>
+      <div class="col-lg-4 py-3">
+        <h5>Company</h5>
+        <ul class="footer-menu">
+          <li><a href="{% url 'pyngo:index' %}">pyngoweb.ir</a></li>
+          <li><a>Private Company</a></li>
+          <li><a>Special Company</a></li>
+        </ul>
+      </div>
+    <hr>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <p>This template designed by <a href="{% url 'pyngo:index' %}">pyngoweb</a></p>
+      </div>
+      <div class="col-md-6 text-left">
+        <div class="sosmed-button">
+          <a href="#"><span class="mai-logo-instagram"></span></a>
+          <a href="#"><span class="mai-logo-twitter"></span></a>
+          <a href="#"><span class="mai-logo-youtube"></span></a>
+          <a href="#"><span class="mai-logo-linkedin"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endif %}

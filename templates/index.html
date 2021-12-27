@@ -1,16 +1,34 @@
+
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+{% block meta %}
+       <meta name="description" content="صفحه اصلی  طراحی سایت پینگو وب">
+       <meta property="og:url" content="https://pyngoweb.ir/">
+       <meta property="og:title" content="پینگو وب | صفحه اصلی">
+       <meta property="og:description" content="ساخت و طراحی وب سایت و وب اپلیکیشن در ایران با کمترین قیمت">
+       <meta property="og:image" content="{% static 'assets/img/logo.png' %}">
+       <meta property="og:type" content="website">
+       <meta name="google-site-verification" content="Na6GXkDXfUkPiK1sE43nbWVK5xsVJNKRgTxvYZ4GEz8" />
+{% endblock %}
+{% block title %} | صفحه اصلی {% endblock %}
+
 
 
 {% block body %}
+{% if LANGUAGE_CODE == 'fa' %}
+
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
     <div class="page-banner ml-3 mr-3 bg-img bg-img-parallax" style="background-image: url({% static '/assets/img/python3.png' %}); height:40%;">
       <div class="row">
-        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="background for index ">
         <div class="col-lg-6 col-sm-12" style="direction:rtl;">
-          <h5 class="bg-primary col-6 mt-5 text-right">  وب سایت پینگو وب</h5>
+          <h5 class="bg-primary col-6 mt-5 text-right">  پینگو وب</h5>
           <p class="m-3 fg-light  text-justify">گروه طراحی پینگو وب دارای تیم متخصص و حرفه ای با سابقه درخشان در زمینه برنامه نویسی و طراحی گرافیک با ارائه خدمات طراحی سایت و سئو در سطح بالاترین کیفیت و استاندارهای برنامه نویسی مطابق با الگوریتم های گوگل توانسته است با افتخار رضایت تمام مشتریان خود را جلب و جایگاه قابل توجهی در میان شرکت ها و موسسات کسب نماید.
           </p>
         </div>
@@ -27,7 +45,7 @@
           </div>
         </div>
       </div>
-    </div
+    </div>
   </div> <!-- .page-banner -->
 
   <main>
@@ -37,7 +55,7 @@
           <div class="col-lg-6 py-3">
 
             <div class="about-img">
-              <img src="{% static 'assets/img/team.png' %}" alt="">
+              <img src="{% static 'assets/img/team.png' %}" alt="about us team">
             </div>
           </div>
           <div class="col-lg-6 py-3">
@@ -64,7 +82,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/web_development.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/web_development.svg' %}" alt="site design">
               </div>
               <h5>طراحی سایت</h5>
             </div>
@@ -72,7 +90,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/graphics_design.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/graphics_design.svg' %}" alt="logo design">
               </div>
               <h5>طراحی لوگو و آرم</h5>
             </div>
@@ -81,7 +99,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/seo_and_marketing.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/seo_and_marketing.svg' %}" alt="seo">
               </div>
               <h5>سئو و بهینه سازی سایت</h5>
 
@@ -91,7 +109,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/app_development.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/app_development.svg' %}" alt="mobile app">
               </div>
               <h5>طراحی موبایل اپلیکیشن</h5>
             </div>
@@ -100,7 +118,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/ui_ux_design.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/ui_ux_design.svg' %}" alt="UI UX design">
               </div>
               <h5>UI/UX طراحی</h5>
             </div>
@@ -109,7 +127,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/product_design.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/product_design.svg' %}" alt="branding">
               </div>
               <h5>برند سازی</h5>
             </div>
@@ -129,54 +147,81 @@
         <div class="owl-carousel team-carousel mt-5"> 
           <div class="team-wrap">
             <div class="team-profile">
-              <img src="{% static 'assets/img/big.png' %}" alt="">
+              <img src="{% static 'assets/img/big.png' %}" alt="gold plan">
             </div>
             <div class="team-content">
               <h5>طرح طلایی</h5>
 
               <div class="social-button">
-               <p>1</p>
-               <p>2</p>
-               <p>3</p>
+                <h4 class='bg-primary text-light p-4' style='direction:rtl'>                
+                  <p class='bg-danger text-light'>تخفیف ویژه</p>
+                  4.500.000  تومان
+                </h4>
+                <div class='p-3' style='background-color:rgb(54, 51, 238)'>
+                  <p class='text-light'> .ir و .com دامنه رایگان </p>
+                  <p class='text-light'>کنترل پنل فارسی</p>
+                  <p class='text-light'>هاست رایگان 2000 مگابایت</p>
+                  <p class='text-light'>پشتیبانی 6 ماه رایگان</p>
+                  <p class='text-light'>ورود اطلاعات رایگان</p>
+                  <p class='text-light'>طراحی قالب اختصاصی</p>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="team-wrap">
             <div class="team-profile">
-              <img src="{% static 'assets/img/medium.jpg' %}" alt="">
+              <img src="{% static 'assets/img/medium.jpg' %}" alt="plan silver">
             </div>
             <div class="team-content">
               <h5>طرح نقره ای</h5>
 
               <div class="social-button">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
+                <h4 class='bg-primary text-light p-4' style='direction:rtl'>
+                  <p class='bg-danger text-light'>تخفیف ویژه</p>
+                   3.000.000 تومان
+                </h4>
+                <div class='p-3' style='background-color:rgb(110, 138, 82)'>
+                  <p class='text-light'>.ir دامنه رایگان </p>
+                  <p class='text-light'>کنترل پنل فارسی</p>
+                  <p class='text-light'>هاست رایگان 1000 مگابایت</p>
+                  <p class='text-light'>پشتیبانی 3 ماه رایگان</p>
+                  <p class='text-light'>ورود اطلاعات رایگان</p>
+                  <p class='text-light'>قالب های اختصاصی آماده</p>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="team-wrap">
             <div class="team-profile">
-              <img src="{% static 'assets/img/small.webp' %}" alt="">
+              <img src="{% static 'assets/img/small.webp' %}" alt="base plan">
             </div>
             <div class="team-content">
               <h5>طرح پایه</h5>
 
               <div class="social-button">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
+                <h4 class='bg-primary text-light p-4' style='direction:rtl' > 
+                  <p class='bg-danger text-light'>تخفیف ویژه</p>
+                  1.500.000 تومان 
+                </h4>
+                <div class='p-3' style='background-color:rgb(108, 124, 109)'>
+                  <p class='text-light'>.ir دامنه رایگان </p>
+                  <p class='text-light'>کنترل پنل فارسی</p>
+                  <p class='text-light'>هاست رایگان 500 مگابایت</p>
+                  <p class='text-light'>پشتیبانی 1 ماه رایگان</p>
+                  <p class='text-light'>ورود اطلاعات رایگان</p>
+                  <p class='text-light'>قالب های اختصاصی آماده</p>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
       </div> <!-- .container -->
+      
     </div> <!-- .page-section -->
           
-         
     <div class="page-section text-right">
       <div class="container">
         <div class="text-center">
@@ -190,11 +235,11 @@
                 {% csrf_token %}
                 <div class="col-lg-8 col-sm-12 py-2">
                   <label for="name" class="fg-grey">نام و نام خانودگی</label>
-                  <input type="text" name="name" class="form-control text-right" id="name" placeholder="...نام">
+                  <input type="text" name="name" class="form-control bg-grey text-right" id="name" placeholder="...نام">
                 </div>
                 <div class="col-lg-8 col-sm-12 py-2">
                   <label for="tel" class="fg-grey">شماره تماس</label>
-                  <input type="tel" name="phone" class="form-control" id="tel" placeholder="09120000000">
+                  <input type="tel" name="phone" class="form-control bg-grey" id="tel" placeholder="09120000000">
                 </div>
                 <div class="col-12 mt-3">
                   <button type="submit" style="float:left; direction:ltr; position: left;" class="btn btn-primary px-5">ارسال</button>
@@ -204,7 +249,12 @@
         </div>
       </div> <!-- .container -->
     </div> <!-- .page-section -->
-    <div id="accordion">
+
+    <div class="container text-right">
+      <p for="tel" class="fg-grey">سوالات متداول</p>
+    </div>
+
+    <div id="accordion" style='float:righ'>
       <div class="card">
         <div class="card-header" id="headingOne">
           <h5 class="mb-0" style='text-align:right'>
@@ -215,8 +265,8 @@
         </div>
     
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-            <p></p>
+          <div class="card-body" style='text-align:right'>
+            <p>در صورتی که شما به دنبال یک وب سایت منحصر به فرد برای کسب و کار خود هستید یا امکانات به خصوصی مد نظرتان است، ما طراحی اختصاصی برای شما انجام خواهیم داد. به این معنی که سایت شما از ابتدا و با توجه به نیازهایتان ساخته خواهد شد.</p>
             <p></p>
           </div>
         </div>
@@ -225,13 +275,13 @@
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0" style='text-align:right'>
             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              تفاوت بسته های طراحی سایت پینگو وب در چیست؟
+               اختصاصی وب سایت من بر روی چه سیستمی انجام می‌شود؟
             </button>
           </h5>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-          <div class="card-body">
-            <p></p>
+          <div class="card-body" style='text-align:right'>
+            <p>طراح های وب سایت ما  سایت اختصاصی شمارو با زبان قدرتمند پایتون فریمورک جنگو همراه دیگر پلتفرم های قدرتمند دیگر طراحی میکنند تا از این طریق وب سایت شما علاوه بر قابل گسترش بودن در تمامی حالات توسعه با بازدهی بالا بکار خود ادامه دهد</p>
             <p></p>          
           </div>
         </div>
@@ -240,14 +290,258 @@
         <div class="card-header" id="headingThree">
           <h5 class="mb-0" style='text-align:right'>
             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              تفاوت بسته های طراحی سایت پینگو وب در چیست؟
+              طراحی سایت اختصاصی من چقدر زمان می برد؟
             </button>
           </h5>
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-          <div class="card-body">
-            <p></p>
+          <div class="card-body" style='text-align:right'>
+            <p>مدت زمان انجام یک پروژه طراحی سایت، کاملاً بستگی به ویژگی‌ها و گستردگی آن دارد. با اینحال، انجام پروژه‌های استاندارد طراحی سایت توسط نوین معمولاً حدود 1 تا 2 ماه زمان می‌برد.</p>
             <p></p>          
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </main>
+  {% endif %}
+  {% if LANGUAGE_CODE == 'en' %}
+   <!-- Back to top button -->
+  <div class="back-to-top"></div>
+
+    <div class="page-banner ml-3 mr-3 bg-img bg-img-parallax" style="background-image: url({% static '/assets/img/python3.png' %}); height:40%;">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12" style="direction:ltr;">
+          <h5 class="bg-primary col-6 mt-5">Pyngo Web Design</h5>
+          <p class="m-3 fg-light  text-justify">
+            Pingo Web Design Group has a professional team with a brilliant background in the field of programming and graphic design by providing site design and SEO services at the highest quality and programming standards in accordance with Google algorithms has been able to proudly satisfy all its customers. And gain a significant position among companies and institutions.
+          </p>
+        </div>
+        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+
+      </div>
+      <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-lg-8" style="direction: rtl;">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
+                <li class="breadcrumb-item"><a href="{% url 'pyngo:index' %}"> home page</a></li>
+              </ol>
+            </nav>
+            <h1 class="fg-white text-center">Design web with pyngoweb</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .page-banner -->
+
+  <main>
+    <div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 py-3">
+
+            <div class="about-img">
+              <img src="{% static 'assets/img/team.png' %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 py-3">
+            <div class="subhead" > about us</div> <br>
+            <h2 class="title-section">We sre<span class="fg-primary">a young team</span>to grow your business</h2>
+
+            <p style="text-align:justify;">
+              Talk to us about your business so we can tell you how you can grow your business and learn about its challenges. We can provide a complete report for you and your business, give you ideas or ideas Develop you in a better way
+            </p>
+            <a href="{% url 'pyngo:about_us' %}" class="btn btn-primary mt-4">more information</a>
+          </div>
+        
+        </div>
+      </div>
+    </div> <!-- .page-section -->
+
+    <div class="page-section">
+      <div class="container">
+        <div class="text-center">
+          <div class="subhead">our services</div>
+          <h2 class="title-section">Our collection of services and activities</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/web_development.svg' %}" alt="">
+              </div>
+              <h5>Web design</h5>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/graphics_design.svg' %}" alt="">
+              </div>
+              <h5>Logo design</h5>
+            </div>
+          </div>
+  
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/seo_and_marketing.svg' %}" alt="">
+              </div>
+              <h5>SEO and site optimization</h5>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/app_development.svg' %}" alt="">
+              </div>
+              <h5>Mobile application design</h5>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/ui_ux_design.svg' %}" alt="">
+              </div>
+              <h5>UI/UX design</h5>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/product_design.svg' %}" alt="">
+              </div>
+              <h5>branding</h5>
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- .container -->
+    </div> <!-- .page-section -->
+
+    <div class="page-section">
+      <div class="container">
+        <div class="text-center">
+          <div class="subhead">Website design plans<div>
+          <h2 class="title-section">Different tariffs</h2>
+        </div>
+
+        <div class="owl-carousel team-carousel mt-5"> 
+          <div class="team-wrap">
+            <div class="team-profile">
+              <img src="{% static 'assets/img/big.png' %}" alt="">
+            </div>
+            <div class="team-content">
+              <h5>Gold plan</h5>
+
+              <div class="social-button">
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="team-wrap">
+            <div class="team-profile">
+              <img src="{% static 'assets/img/medium.jpg' %}" alt="">
+            </div>
+            <div class="team-content">
+              <h5>Silver plan</h5>
+
+              <div class="social-button">
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="team-wrap">
+            <div class="team-profile">
+              <img src="{% static 'assets/img/small.webp' %}" alt="">
+            </div>
+            <div class="team-content">
+              <h5> base plan</h5>
+
+              <div class="social-button">
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- .container -->
+    </div> <!-- .page-section -->
+          
+         
+    <div class="page-section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="title-section mb-3"> Request a free consultation</h2>
+          <p>Just register your number so we can call you by Skype</p>
+        </div>
+        <div class="row justify-content-center mt-5">
+          <div class="col-lg-2 col-sm-12"></div>
+          <div class="col-lg-8 col-sm-12 ">
+            <form action="{% url 'pyngo:contact' %}" method="POST" class="form-contact" novalidate>
+                {% csrf_token %}
+                <div class="col-lg-8 col-sm-12 py-2">
+                  <label for="name" class="fg-grey">your name </label>
+                  <input type="text" name="name" class="form-control bg-grey" id="name" placeholder="name...">
+                </div>
+                <div class="col-lg-8 col-sm-12 py-2">
+                  <label for="tel" class="fg-grey"> phone number</label>
+                  <input type="tel" name="phone" class="form-control bg-grey" id="tel" placeholder="+98120000000">
+                </div>
+                <div class="col-12 mt-3">
+                  <button type="submit" style="float:left; direction:ltr; position: left;" class="btn btn-primary px-5">Submit</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div> <!-- .container -->
+    </div> <!-- .page-section -->
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              What is the difference between Pingo Web site design packages?            </button>
+          </h5>
+        </div>
+    
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <p>If you are looking for a unique website for your business or private facilities, we will do a custom design for you. This means that your site will be built from scratch according to your needs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              What system is my website dedicated to?            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <p>Our website designers design your own site with the powerful Python Django framework language along with other powerful platforms so that your website, in addition to being scalable in all modes of development, will continue to work with high efficiency.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0" >
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              How long does it take to design my own site?            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <p>The duration of a site design project depends entirely on its features and scope. However, it only takes about 1 to 2 months for Novin to complete standard web design projects.</p>
           </div>
         </div>
       </div>
@@ -255,4 +549,6 @@
 
    
   </main>
+  {% endif %}
+
 {% endblock %}

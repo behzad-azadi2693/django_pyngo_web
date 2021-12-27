@@ -1,13 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block meat %}
+<meta name="description" content=" خدمات طراحی سایت پینگو وب">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pyngoweb.ir/services/">
+<meta property="og:title" content="پینگو وب | خدمات ما">
+<meta property="og:description" content="ساخت و طراحی وب سایت و وب اپلیکیشن در ایران با کمترین قیمت">
+<meta property="og:image" content="{% static 'assets/img/logo.png' %}">
+{% endblock %}
+
+{% block title %} | خدمات ما {% endblock %}
 
 {% block body %}
+{% if LANGUAGE_CODE == 'fa' %}
+
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
     <div class="page-banner bg-img m-3 bg-img-parallax" style="background-image: url({% static '/assets/img/services.png' %}); height:30%;">
       <div class="row">
-          <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+          <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="background image">
           <div class="col-lg-6 col-sm-12" style="direction:rtl;">
             <h5 class="bg-primary col-6 mt-5 text-right">خدمات پینگو وب</h5>
             <p class="m-3 fg-light  text-justify">گروه طراحی پینگو وب دارای تیم متخصص و حرفه ای با سابقه درخشان در زمینه برنامه نویسی و طراحی گرافیک با ارائه خدمات طراحی سایت و سئو در سطح بالاترین کیفیت و استاندارهای برنامه نویسی مطابق با الگوریتم های گوگل توانسته است با افتخار رضایت تمام مشتریان خود را جلب و جایگاه قابل توجهی در میان شرکت ها و موسسات کسب نماید.
@@ -42,7 +57,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/web_development.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/web_development.svg' %}" alt="web app">
               </div>
               <h5>طراحی سایت</h5>
               <p style="text-align:justify; direction:rtl">طراحی سایت حرفه ای با بالاترین کیفیت و استاندارد برنامه نویسی بدیهی است طراحی، یک بخش کلیدی از ” طراحی سایت ” است. این دقیقا به چه معنی است؟ طراحی شامل هم اصول طراحی، تعادل، کنتراست، تاکید، ریتم و وحدت و هم عناصر طراحی – خطوط، اشکال، بافت، رنگ و جهت است. با قرار دادن این چیزها با یکدیگر، طراح وب سایت، وب سایت ها را ایجاد می کند، اما یک طراح وب خوب، نه تنها اصول طراحی، بلکه محدودیت های وب را نیز درک می کند.</p>
@@ -51,7 +66,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/graphics_design.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/graphics_design.svg' %}" alt="graphhic design">
               </div>
               <h5>طراحی لوگو و آرم</h5>
               <p style="text-align:justify; direction:rtl">طراحی لوگو و طراحی آرم شخصی یا شرکتی به صورت تخصصی و حرفه ای طراحی لوگو و طراحی آرم مزیتی است که در زمانی که شما می خواهید کسب و کار خود را ارتقا ببخشید، به کمک شما می آید. و به طراحی سایت شما در زیبا شدن کمک می کند در جهان امروز که شبکه های اجتماعی غوغا می کنند و همچنین در بازاریابی نیز بسیار مهم است، داشتن لوگو سایت و آرم سایت تجاری مناسب بسیار موثر و خوب است. لوگو می تواند ارتباط لازم را میان ذهن مشتری و برند ایجاد کند.</p>
@@ -61,7 +76,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/seo_and_marketing.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/seo_and_marketing.svg' %}" alt="seo and markting">
               </div>
               <h5>سئو و بهینه سازی سایت</h5>
               <p style="text-align:justify; direction:rtl">سئو و بهینه سازی سایت به صورت حرفه ای و مطابق با الگوریتم های گوگل سئو بهینه سازی موتور جستجو تضمین می کند که وب سایت ها برای گوگل و دیگر موتورهای جستجو جذاب هستند و افرادی که محصولات، خدمات یا ویژگی های اطلاعاتی را در آن سایت جستجو می کنند می توانند آن را پیدا کنند. سئو سایت و طراحی وب سایت را می‌توان مجموعه‌ای از روش‌ها و استاندراد ها برای ارتقا و رشد وب سايت ها در فضای مجازی اينترنت دانست. سئو بزرگترين خدمات برای كسب و كار میباشد.</p>
@@ -72,7 +87,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/app_development.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/app_development.svg' %}" alt="app develop">
               </div>
               <h5>طراحی موبایل اپلیکیشن</h5>
               <p style="text-align:justify; direction:rtl">طراحی اپلیکیشن موبایل هوشمند به صورت حرفه ای و برنامه نویسی تخصصی اپلیکیشن ‌های موبایل بخش بزرگی از زندگی روزمره‌ی هم مشتریان و هم صاحبان تجارت هستند. تقریبا همه مدت زمانی را در طول روز صرف موبایل خود می‌کنند بسیار خب، برای بعضی از ما این مدت زمان خیلی زیاد است. بیشتر این زمان در اپلیکیشن‌های مختلف گذرانده می‌شود. وقتی‌ که یک کسب و کار قادر است طراحی اپلیکیشن موبایلی پیشنهاد دهد که تمام خدمات قدم جلوتر می‌برد.</p>
@@ -82,7 +97,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/ui_ux_design.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/ui_ux_design.svg' %}" alt="UI UX">
               </div>
               <h5>UI/UX طراحی</h5>
               <p style="text-align:justify; direction:rtl">هرجایی که محصول و کاربر داشته باشد، حتما با دو مفهوم طراحی تجربه کاربری و طراحی رابط کاربری سر و کار دارد.  طراح "تجربه کاربری" استودیو سعی دارد تجربه کابر از کار کردن با سایت یا خدمات را بهبود دهد و با حدس زدن تمام سناریوهایی که ممکن است به ذهن مخاطب برسد تجربه ایده آل را رقم بزند.طراح رابط کاربری با طراحی بخش هایی از محصول دیجیتال که کاربر آن را می بیند و از آن استفاده می کند، با کمک هنر گرافیک ایده آل طرح نهایی سایت و اپلیکیشن را پیاده سازی می کند.</p>
@@ -92,7 +107,7 @@
           <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
             <div class="text-center">
               <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/product_design.svg' %}" alt="">
+                <img src="{% static 'assets/img/icons/product_design.svg' %}" alt="product design">
               </div>
               <h5>برند سازی</h5>
               <p style="text-align:justify; direction:rtl"> برند سازی کسب کار شما به صورت کاملا هدفمند و برنامه ریزی شده برندسازی فراتر از تنها یک لوگو یا عنصر گرافیکیست. زمانیکه درباره ی برندتان فکر می کنید، در واقع می خواهید درباره ی تمام تجربه ی مشتریانتان بیندیشید همه چیز گرفته از لوگو ، طراحی سایت ، تجارب رسانه های اجتماعی شما، نحوه ای که تلفن را پاسخ می دهید تا نحوه ای که مشتریانتان کارکنان شما را تجربه می کنند. برند شما نحوه ایست که مشتریانتان و طرفدارانتان در سراسر جهان شما را میبیند.</p>
@@ -114,7 +129,7 @@
             </div>
             <div class="author">
               <div class="avatar">
-                <img src="{% static 'assets/img/mini/minipy.png' %}" alt="">
+                <img src="{% static 'assets/img/mini/minipy.png' %}" alt="python">
               </div>
               <div class="d-inline-block ml-2">
                 <div class="author-name">Python</div>
@@ -128,7 +143,7 @@
               Django یک فریمورک MTV برای ساخت اپلیکیشن‌های وب است. جنگو به برنامه‌نویسان وب کمک میکند تا کدهای تمیز، کارآمد و قدرتمند بنویسند. علاوه بر اینکه در لیست محبوب‌ترین فریمورک‌های وب جهان حضور دارد، جنگو یکی از پر استفاده‌ترین تکنولوژیها برای توسعه وب میباشد.            </div>
             <div class="author">
               <div class="avatar">
-                <img src="{% static 'assets/img/mini/minidj.png' %}" alt="">
+                <img src="{% static 'assets/img/mini/minidj.png' %}" alt="django">
               </div>
               <div class="d-inline-block ml-2">
                 <div class="author-name">Django</div>
@@ -142,7 +157,7 @@
               Postgres یک پایگاه داده قدرتمند متن باز با سیستم object-relational است که زبان SQL را گسترش داده و آن را با تعداد زیادی ویژگی مختلف جدید ترکیب می کند که می توانند در ذخیره مطمئن و دسته بندی پیچیده ترین فعالیت های داده ای به شما کمک کنند.            </div>
             <div class="author">
               <div class="avatar">
-                <img src="{% static 'assets/img/mini/minipo.png' %}" alt="">
+                <img src="{% static 'assets/img/mini/minipo.png' %}" alt="postgres">
               </div>
               <div class="d-inline-block ml-2">
                 <div class="author-name">Postgresql</div>
@@ -156,7 +171,7 @@
               Docker به توسعه‌دهندگان کمک می‌کند تا ظروف نرم‌افزاری سبک و قابل حمل را بسازند که کار توسعه، آزمایش و استقرار برنامه‌ها را ساده می‌کند. داکر از محیط های کوچک و بزرگ اجزای سیستم عامل به صورت مشترک استفاده می‌کند که کاربران بتوانند به راحتی یک اپلیکیشن را توسعه دهند            </div>
             <div class="author">
               <div class="avatar">
-                <img src="{% static 'assets/img/mini/minido.png' %}" alt="">
+                <img src="{% static 'assets/img/mini/minido.png' %}" alt="docker">
               </div>
               <div class="d-inline-block ml-2">
                 <div class="author-name">Docker</div>
@@ -170,7 +185,7 @@
               Nginx به عنوان یکی از محبوب‌ترین و بهترین وب سرورها معرفی می شود که بصورت open source برای پروتکل های POP3، SMTP، HTTPS، HTTP و IMAP استفاده می شود. انجین‌اکس بر روی سیستم عامل های مختلف مانند و لینوکس و ویندوز همچنین انواع BSD ها قابل اجراست.            </div>
             <div class="author">
               <div class="avatar">
-                <img src="{% static 'assets/img/mini/mining.png' %}" alt="">
+                <img src="{% static 'assets/img/mini/mining.png' %}" alt="nginx">
               </div>
               <div class="d-inline-block ml-2">
                 <div class="author-name">ٔNginx</div>
@@ -185,7 +200,7 @@
             </div>
             <div class="author">
               <div class="avatar">
-                <img src="{% static 'assets/img/mini/minire.png' %}" alt="">
+                <img src="{% static 'assets/img/mini/minire.png' %}" alt="redis">
               </div>
               <div class="d-inline-block ml-2">
                 <div class="author-name">ًRedis</div>
@@ -200,7 +215,7 @@
             </div>
             <div class="author">
               <div class="avatar">
-                <img src="{% static 'assets/img/mini/minice.png' %}" alt="">
+                <img src="{% static 'assets/img/mini/minice.png' %}" alt="celery">
               </div>
               <div class="d-inline-block ml-2">
                 <div class="author-name">Celery</div>
@@ -214,7 +229,7 @@
               uWSGI یک نرم‌افزار کاربردی پر سرعت کد نویسی شده با زبان سی(C)، با هدف توسعه full stack برای ساختمان خدمات میزبانی می باشد، که پس از وب سرور رابط دروازه(WSGI) که اولین افزونه‌های پشتیبانی شده توسط این پروژه است.            </div>
             <div class="author">
               <div class="avatar">
-                <img src="{% static 'assets/img/mini/miniuw.png' %}" alt="">
+                <img src="{% static 'assets/img/mini/miniuw.png' %}" alt="uwsgi">
               </div>
               <div class="d-inline-block ml-2">
                 <div class="author-name">ٌَUwsgi</div>
@@ -230,7 +245,7 @@
             </div>
             <div class="author">
               <div class="avatar">
-                <img src="{% static 'assets/img/mini/minimo.png' %}" alt="">
+                <img src="{% static 'assets/img/mini/minimo.png' %}" alt="mongodb">
               </div>
               <div class="d-inline-block ml-2">
                 <div class="author-name">Mongodb</div>
@@ -244,4 +259,263 @@
     </div> <!-- .page-section -->
 
   </main>
+  {% endif %}
+{% if LANGUAGE_CODE == 'en' %}
+  <!-- Back to top button -->
+  <div class="back-to-top"></div>
+
+    <div class="page-banner bg-img m-3 bg-img-parallax" style="background-image: url({% static '/assets/img/services.png' %}); height:30%;">
+      <div class="row">
+          <div class="col-lg-6 col-sm-12">
+            <h5 class="bg-primary col-6 mt-5">Services pyngoweb</h5>
+            <p class="m-3 fg-light  text-justify">
+              Pingo Web Design Group has a professional team with a brilliant background in the field of programming and graphic design by providing site design and SEO services at the highest quality and programming standards in accordance with Google algorithms has been able to proudly satisfy all its customers. And gain a significant position among companies and institutions.
+            </p>
+          </div>
+          <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+      </div>
+      <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-lg-8" style="direction: rtl;">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
+                <li class="breadcrumb-item"><a href="{% url 'pyngo:index' %}">home page</a></li>
+                <li class="breadcrumb-item active" aria-current="page">our services</li>
+              </ol>
+            </nav>
+            <h1 class="fg-white text-center">Pingo Web Website Design Services</h1>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .page-banner -->
+  </header>
+
+  <main>
+    
+         
+    <div class="page-section">
+      <div class="container">
+        <div class="text-center">
+          <div class="subhead">our service</div>
+          <h2 class="title-section">Our collection of services and activities</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/web_development.svg' %}" alt="">
+              </div>
+              <h5>web design</h5>
+              <p class="text-justify"> 
+                Professional site design with the highest quality and standard programming Obviously design is a key part of "site design". What exactly does this mean? Design includes both design principles, balance, contrast, emphasis, rhythm and unity, as well as design elements - lines, shapes, textures, colors and directions. By putting these things together, a web designer creates websites, but a good web designer understands not only the design principles, but also the limitations of the web.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/graphics_design.svg' %}" alt="">
+              </div>
+              <h5>Logo design</h5>
+              <p class="text-justify" >
+                Logo design and logo design Personal or corporate professionally Logo design and logo design is an advantage that helps you when you want to promote your business. And it helps to design your site to be beautiful In today's world where social networks are buzzing and it is also very important in marketing, having a proper site logo and logo is very effective and good. The logo can create the necessary connection between the mind of the customer and the brand.
+              </p>
+            </div>
+          </div>
+  
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/seo_and_marketing.svg' %}" alt="">
+              </div>
+              <h5>SEO and site optimization</h5>
+              <p class="text-justify">
+                SEO and site optimization Professionally in accordance with Google algorithms SEO Search Engine Optimization SEO ensures that websites are attractive to Google and other search engines and people who search for products, services or information features on that site They can find it. SEO and website design can be considered as a set of methods and standards for promoting and growing websites in cyberspace. SEO is the biggest service for business.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/app_development.svg' %}" alt="">
+              </div>
+              <h5>Mobile application design</h5>
+              <p class="text-justify">
+                Professionally designed smart mobile applications and specialized programming Mobile applications are a big part of the daily life of both customers and business owners. Almost everyone spends their time on their mobile phone during the day. Well, for some of us, that time is too long. Most of this time is spent in various applications. When a business is able to offer a mobile application design that takes all services one step further.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/ui_ux_design.svg' %}" alt="">
+              </div>
+              <h5>UI/UX design</h5>
+              <p class="text-justify">
+                Wherever there is a product and user, it must deal with the two concepts of user experience design and user interface design. The "user experience" designer of the studio tries to improve the user experience of working with the site or service, and by guessing all the scenarios that may come to the mind of the audience, the ideal experience. The user interface designer by designing parts of the digital product Which the user sees and uses, implements the final design of the site and application with the help of ideal graphic art.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
+            <div class="text-center">
+              <div class="img-fluid mb-4">
+                <img src="{% static 'assets/img/icons/product_design.svg' %}" alt="">
+              </div>
+              <h5>Branding</h5>
+              <p class="text-justify"> 
+                Branding your business in a completely targeted and planned way Branding is more than just a logo or graphic element. When you think about your brand, you actually want to think about the whole experience of your customers, from the logo, the site design, your social media experiences, the way you answer the phone to the way your customers call your employees. they experience. Your brand is how your customers and fans around the world see you.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- .container -->
+    </div> <!-- .page-section -->
+
+    <!-- Testimonials -->
+    <div class="page-section">
+      <div class="container">
+        <div class="owl-carousel testimonial-carousel">
+          <div class="card-testimonial">
+            <div class="content text-justify">
+              Python is an object-oriented multipurpose language. One of the most important reasons for creating the Python programming language is the high readability of the code. Python is designed so that programmers can create large and small programming projects quite clearly and unambiguously.            </div>
+            <div class="author">
+              <div class="avatar">
+                <img src="{% static 'assets/img/mini/minipy.png' %}" alt="">
+              </div>
+              <div class="d-inline-block ml-2">
+                <div class="author-name">Python</div>
+                <div class="author-info">Language programming</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-testimonial">
+            <div class="content text-justify">
+              Django is an MTV framework for building web applications. Django helps web developers write clean, efficient, and powerful code. In addition to being on the list of the world's most popular web frameworks, Django is one of the most widely used technologies for web development. 
+            </div>            
+            <div class="author">
+              <div class="avatar">
+                <img src="{% static 'assets/img/mini/minidj.png' %}" alt="">
+              </div>
+              <div class="d-inline-block ml-2">
+                <div class="author-name">Django</div>
+                <div class="author-info">Python-based framework</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-testimonial">
+            <div class="content text-justify">
+              Postgres is a powerful open source database object-relational system that extends the SQL language and combines it with many new features that can help you securely store and categorize the most complex data activities.       
+            </div>
+            <div class="author">
+              <div class="avatar">
+                <img src="{% static 'assets/img/mini/minipo.png' %}" alt="">
+              </div>
+              <div class="d-inline-block ml-2">
+                <div class="author-name">Postgres</div>
+                <div class="author-info">Powerful relational database</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-testimonial">
+            <div class="content text-justify">
+              Docker helps developers build lightweight, portable software containers that make it easy to develop, test, and deploy applications. Docker shares small and large operating system components so that users can easily develop an application. 
+            </div>            
+            <div class="author">  
+                <div class="avatar">
+                <img src="{% static 'assets/img/mini/minido.png' %}" alt="">
+              </div>
+              <div class="d-inline-block ml-2">
+                <div class="author-name">Docker</div>
+                <div class="author-info">Linux based platform</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-testimonial">
+            <div class="content text-justify">
+              Nginx is known as one of the most popular and best web servers that is used as open source for POP3, SMTP, HTTPS, HTTP and IMAP protocols. EngineX runs on a variety of operating systems such as Linux and Windows, as well as a variety of BSDs.
+              </div>
+              <div class="author">
+              <div class="avatar">
+                <img src="{% static 'assets/img/mini/mining.png' %}" alt="">
+              </div>
+              <div class="d-inline-block ml-2">
+                <div class="author-name">ٔNginx</div>
+                <div class="author-info">Open source web server</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-testimonial">
+            <div class="content text-justify">
+              Redis is a type of data structure that is stored in RAM and where information is temporarily stored. Radius stores data with a key-value system, and thanks to this feature, accessing and retrieving this information will be much easier.            </div>
+            <div class="author">
+              <div class="avatar">
+                <img src="{% static 'assets/img/mini/minire.png' %}" alt="">
+              </div>
+              <div class="d-inline-block ml-2">
+                <div class="author-name">ًRedis</div>
+                <div class="author-info">Non-relational key / value database</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-testimonial">
+            <div class="content text-justify">
+              Celery is an asynchronous task queue based on the best practices and solutions to organizational problems. The gallery is written in python and open source and most programming languages such as php, ruby, java, etc. can work with it.            </div>
+            <div class="author">
+              <div class="avatar">
+                <img src="{% static 'assets/img/mini/minice.png' %}" alt="">
+              </div>
+              <div class="d-inline-block ml-2">
+                <div class="author-name">Celery</div>
+                <div class="author-info">Asynchronous task queue</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-testimonial">
+            <div  class="content text-justify">
+              uWSGI is a high-speed application software coded in C, with the aim of developing a full stack for building hosting services, which is the first add-ons supported by the project after the Web Server Gateway Interface (WSGI).            </div>
+            <div class="author">
+              <div class="avatar">
+                <img src="{% static 'assets/img/mini/miniuw.png' %}" alt="">
+              </div>
+              <div class="d-inline-block ml-2">
+                <div class="author-name">ٌَUwsgi</div>
+                <div class="author-info">Non-relational open source database</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-testimonial">
+            <div class="content text-justify">
+              MongoDB Database is a centralized cross-platform free and open source database application that is part of the NoSQL database and uses JSON documents such as schemata.
+              This database is written in C ++, C + and JavaScript.
+            </div>
+            <div class="author">
+              <div class="avatar">
+                <img src="{% static 'assets/img/mini/minimo.png' %}" alt="">
+              </div>
+              <div class="d-inline-block ml-2">
+                <div class="author-name">Mongodb</div>
+                <div class="author-info">Non-relational open source database</div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+      </div> <!-- .container -->
+    </div> <!-- .page-section -->
+
+  </main>
+{% endif %}
 {% endblock %}

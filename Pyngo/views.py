@@ -5,6 +5,14 @@ from django.contrib import messages
 from notifications.signals import notify
 from django.contrib.auth import get_user_model
 from notifications.models import Notification
+from django.utils import translation
+
+def language(request, lang):
+    if lang in ['fa','en']:
+        translation.activate(lang)
+        return redirect('pyngo:index')
+    return redirect('pyngo:index')
+
 
 def index(request):
     return render(request, 'index.html')

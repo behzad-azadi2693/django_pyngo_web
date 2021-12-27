@@ -1,6 +1,8 @@
 {% load static %}
 {% load notifications_tags %}
 {% notifications_unread as unread_count %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% url 'pyngo:index' as index%}
 {% url 'pyngo:services' as services%}
@@ -8,15 +10,20 @@
 {% url 'pyngo:portfolio' as portfolio%}
 {% url 'pyngo:contact_us' as contact_us%}
 
+
+{% if LANGUAGE_CODE == 'fa' %}
 <header>
     <div class="top-bar bg-primary">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-8">
             <div class="d-inline-block">
-              <span class="mai-mail fg-light"></span> <a href="gmail:contact@gmail.com" class="fg-light">contact@mail.com</a>
+              <span class="mai-mail fg-light"></span> <a href="gmail:pyngoweb@gmail.com" class="fg-light">pyngoweb@gmail.com</a>
             </div>
+            <a class="fg-danger ml-2" href="{% url 'pyngo:language' 'en' %}">Language English</a>
+
             {% if request.user.is_authenticated and request.user.is_admin %}
+          
             <div class="d-inline-block">
               <a href="{% url 'pyngo:all_notifications' %}" class="fg-light">
                 <span class="mai-notifications ml-3 fg-danger"></span> 
@@ -43,15 +50,9 @@
       </div> <!-- .container -->
     </div> <!-- .top-bar -->
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="direction: rtl;" id="navbar_top">
+    <nav class="navbar navbar-expand-md navbar-light" style="direction: rtl;" id="navbar_top">
       <div class="container">
-        <a href="{{index}}" class="navbar-brand"><img ￼
-          این فیلد لازم است.
-          پیغام￼
-          این فیلد لازم است.
-          ￼ارسال
-          ￼
-          src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>
+        <a href="{{index}}" class="navbar-brand"><img src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -82,3 +83,78 @@
       </div> <!-- .container -->
     </nav> <!-- .navbar -->
 </header>
+
+{% endif %}
+
+{%if LANGUAGE_CODE == 'en' %}
+<header>
+  <div class="top-bar bg-primary">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <div class="d-inline-block">
+            <span class="mai-mail fg-light"></span> <a href="gmail:contact@gmail.com" class="fg-light">contact@mail.com</a>
+          </div>
+          <a class="fg-danger ml-2" href="{% url 'pyngo:language' 'fa' %}">زبان فارسی</a> 
+          {% if request.user.is_authenticated and request.user.is_admin %}
+          <div class="d-inline-block">
+            <a href="{% url 'pyngo:all_notifications' %}" class="fg-light">
+              <span class="mai-notifications ml-3 fg-danger"></span> 
+              {% if unread_count > 0 %}
+                {{ unread_count }}
+              {% else %}
+                0
+              {% endif %}
+            </a>
+          </div>
+          {% endif %}
+          <div class="d-inline-block ml-2">
+          </div>
+        </div>
+        <div class="col-md-4 text-right d-none d-md-block">
+          <div class="social-mini-button">
+            <a href="https://api.whatsapp.com/send?phone=989188688569"><span class="mai-logo-whatsapp fg-light"></span></a>
+            
+            <a href="#"><span class="mai-logo-telegram fg-light"></span></a>
+            <a href="#"><span class="mai-logo-youtube fg-light"></span></a>
+            <a href="https://www.instagram.com/pyngoweb/"><span class="mai-logo-instagram fg-light"></span></a>
+          </div>
+        
+        </div>
+      </div>
+    </div> <!-- .container -->
+  </div> <!-- .top-bar -->
+
+  <nav class="navbar navbar-expand-md navbar-light" id="navbar_top">
+    <div class="container">
+      <a href="{{index}}" class="navbar-brand"><img
+        src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>
+
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
+          <li class="nav-item {% if request.path == index %}active{% endif %}">
+            <a href="{{ index }}" class="nav-link">home page</a>
+          </li>
+          
+          <li class="nav-item {% if request.path == services %}active{% endif %}">
+            <a href="{{services}}" class="nav-link">services</a>
+          </li>
+         
+          <li class="nav-item {% if request.path == contact_us %}active{% endif %}">
+              <a href="{{contact_us}}" class="nav-link">contact us</a>
+          </li>
+          <li class="nav-item {% if request.path == about_us %}active{% endif %}">
+              <a href="{{about_us}}" class="nav-link">about us</a>
+          </li>
+        </ul>
+      </div>
+      
+    </div> <!-- .container -->
+   
+  </nav> <!-- .navbar -->
+</header>
+{% endif %}

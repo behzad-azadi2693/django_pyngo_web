@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block meat %}
+<meta name="description" content="ارتباط با طراحی سایت پینگو وب">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pyngoweb.ir/contact/us/">
+<meta property="og:title" content="پینگو وب |  ارتباط با ما">
+<meta property="og:description" content="ساخت و طراحی وب سایت و وب اپلیکیشن در ایران با کمترین قیمت">
+<meta property="og:image" content="{% static 'assets/img/logo.png' %}">
+{% endblock %}
+
+{% block title %} | ارتباط با ما {% endblock %}
 
 {% block body %}
+{% if LANGUAGE_CODE == 'fa' %}
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
@@ -11,7 +25,7 @@
 
     <div class="page-banner mr-3 ml-3 bg-img bg-img-parallax" style="background-image: url({% static 'assets/img/contact.png' %});height:30%;">
       <div class="row">
-        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="background image">
         <div class="col-lg-6 col-sm-12" style="direction:rtl;">
           <h5 class="bg-primary col-6 mt-5 text-right"> ارتباط با پینگو وب</h5>
           <p class="m-3 fg-light  text-justify">گروه طراحی پینگو وب دارای تیم متخصص و حرفه ای با سابقه درخشان در زمینه برنامه نویسی و طراحی گرافیک با ارائه خدمات طراحی سایت و سئو در سطح بالاترین کیفیت و استاندارهای برنامه نویسی مطابق با الگوریتم های گوگل توانسته است با افتخار رضایت تمام مشتریان خود را جلب و جایگاه قابل توجهی در میان شرکت ها و موسسات کسب نماید.
@@ -64,12 +78,78 @@
       </div> <!-- .container -->
     </div> <!-- .page-section -->
 
-    <div class="maps-container">
-      <div id="google-maps"></div>
+    <div class="map">
+      
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d813.8794584198077!2d46.99678432922663!3d35.31796039305065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ff9970b385f0a53%3A0x45244660b3bbdccf!2z2LTYsdqp2Kog2LfYsdin2K3bjCDYs9in24zYqiDZvtuM2Ybar9mIINmI2KggUHluZ29XZWI!5e0!3m2!1sen!2s!4v1639298057678!5m2!1sen!2s" width="100%" height="450" style="border:100;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </main>
+{% endif %}
+ {% if LANGUAGE_CODE == 'en' %}
+  <!-- Back to top button -->
+  <div class="back-to-top"></div>
 
-{% endblock %}
-{% block javascript %}
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+  <header>
+    <div class="page-banner mr-3 ml-3 bg-img bg-img-parallax" style="background-image: url({% static 'assets/img/contact.png' %});height:30%;">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <h5 class="bg-primary col-6 mt-5">contact with pyngo web</h5>
+          <p class="m-3 fg-light  text-justify"> 
+            Pingo Web Design Group has a professional team with a brilliant background in the field of programming and graphic design by providing site design and SEO services at the highest quality and programming standards in accordance with Google algorithms has been able to proudly satisfy all its customers. And gain a significant position among companies and institutions.
+          </p>
+        </div>
+        <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+
+      </div>
+      <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-lg-8", style="direction:rtl">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
+                <li class="breadcrumb-item"><a href="{% url 'pyngo:index' %}"> home page</a></li>
+                <li class="breadcrumb-item active" aria-current="page">contact us</li>
+              </ol>
+            </nav>
+            <h1 class="fg-white text-center">Connect with Pingo Web</h1>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .page-banner -->
+  </header>
+
+  <main>
+    <div class="page-section">
+      <div class="container">
+        <div class="text-center" style="direction:rtl">
+          <h2 class="title-section mb-3">Contact us</h2>
+          <p>How to contact us Fill out the form below for us or send us an email <a href="gmail:pyngoweb@mail.com">pyngoweb@gmail.com</a></p>
+          <p> Pingo Web Office Contact Number </p><a href="tel:+989188688569" style="direction: ltr;" class="fg-primary"> +98-9188688569</a>
+        </div>
+        <div class="row justify-content-center mt-5">
+          <div class="col-lg-8">
+            <form action="" method='POST' class="form-contact" novalidate>
+              {% csrf_token %}
+              <div class="row">
+                {% for field in form %}
+                  <div class="col-sm-6 py-2">
+                    <label for="name" class="fg-dark" >{{field.label}}</label>
+                    {{field}}
+                    <h6 style="color: tomato;direction: ltr;">{{ field.errors }}</h6>
+                  </div>
+                {% endfor %}
+                <div class="col-12 mt-3">
+                  <button type="submit" class="btn btn-primary px-5">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div> <!-- .container -->
+    </div> <!-- .page-section -->
+
+    <div class="map">
+      
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d813.8794584198077!2d46.99678432922663!3d35.31796039305065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ff9970b385f0a53%3A0x45244660b3bbdccf!2z2LTYsdqp2Kog2LfYsdin2K3bjCDYs9in24zYqiDZvtuM2Ybar9mIINmI2KggUHluZ29XZWI!5e0!3m2!1sen!2s!4v1639298057678!5m2!1sen!2s" width="100%" height="450" style="border:100;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </main>
+ {% endif %}
 {% endblock %}
