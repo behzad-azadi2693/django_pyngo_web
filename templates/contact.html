@@ -12,7 +12,9 @@
 <meta property="og:image" content="{% static 'assets/img/logo.png' %}">
 {% endblock %}
 
-{% block title %} | ارتباط با ما {% endblock %}
+{% block title %} 
+    {% if LANGUAGE_CODE == 'fa' %} | ارتباط با ما {% elif LANGUAGE_CODE == 'en' %} | contact us {% endif %}
+{%endblock %}
 
 {% block body %}
 {% if LANGUAGE_CODE == 'fa' %}

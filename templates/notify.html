@@ -2,16 +2,20 @@
 {% load static %}
 {% load jalali_tags %}
 
+{% block title %} 
+    {% if LANGUAGE_CODE == 'fa' %}| تماس سریع  {% elif LANGUAGE_CODE == 'en' %} |force call {% endif %}
+{% endblock %}
 
 {% block body %}
+{% if LANGUAGE_CODE == 'fa' %}
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
     <div class="page-banner m-3 bg-img bg-img-parallax" style="background-image: url({% static '/assets/img/message.png' %}); height:40%;">
         <div class="row">
-          <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="">
+          <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="background image">
           <div class="col-lg-6 col-sm-12" style="direction:rtl;">
-            <h5 class="bg-primary col-6 mt-5 text-right">صندوق پیام پیمگو وب</h5>
+            <h5 class="bg-primary col-6 mt-5 text-right">صندوق پیام پینگو وب</h5>
             <p class="m-3 fg-light  text-justify">گروه طراحی پینگو وب دارای تیم متخصص و حرفه ای با سابقه درخشان در زمینه برنامه نویسی و طراحی گرافیک با ارائه خدمات طراحی سایت و سئو در سطح بالاترین کیفیت و استاندارهای برنامه نویسی مطابق با الگوریتم های گوگل توانسته است با افتخار رضایت تمام مشتریان خود را جلب و جایگاه قابل توجهی در میان شرکت ها و موسسات کسب نماید.
             </p>
           </div>
@@ -59,79 +63,67 @@
         {% endfor %}
       </div>
     </div>
-    <div class="page-section">
-      <div class="container">
-        <div class="text-center">
-          <div class="subhead">خدمات ما</div>
-          <h2 class="title-section">مجموعه خدمات و فعالیت های ما</h2>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/web_development.svg' %}" alt="">
-              </div>
-              <h5>طراحی سایت</h5>
-            </div>
-          </div>
-          
-          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/graphics_design.svg' %}" alt="">
-              </div>
-              <h5>طراحی لوگو و آرم</h5>
-            </div>
-          </div>
-  
-          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/seo_and_marketing.svg' %}" alt="">
-              </div>
-              <h5>سئو و بهینه سازی سایت</h5>
-
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/app_development.svg' %}" alt="">
-              </div>
-              <h5>طراحی موبایل اپلیکیشن</h5>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/ui_ux_design.svg' %}" alt="">
-              </div>
-              <h5>UI/UX طراحی</h5>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 col-xl-4 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="{% static 'assets/img/icons/product_design.svg' %}" alt="">
-              </div>
-              <h5>برند سازی</h5>
-            </div>
-          </div>
-
-        </div>
-      </div> <!-- .container -->
-    </div> <!-- .page-section -->
-          
-         
-    
-
-    
-
   </main>
+  {% endif %}
+  {% if LANGUAGE_CODE == 'en' %}
+      <!-- Back to top button -->
+  <div class="back-to-top"></div>
+
+    <div class="page-banner m-3 bg-img bg-img-parallax" style="background-image: url({% static '/assets/img/message.png' %}); height:40%;">
+        <div class="row">
+          <img src="{% static 'assets/img/main.png' %}" class="col-sm-12 col-lg-6" alt="background image">
+          <div class="col-lg-6 col-sm-12" style="direction:rtl;">
+            <h5 class="bg-primary col-6 mt-5 text-right">Pingo Web Message Box </h5>
+            <p class="m-3 fg-light  text-justify">
+                Pingo Web Design Group has a professional team with a brilliant background in the field of programming and graphic design by providing site design and SEO services at the highest quality and programming standards in accordance with Google algorithms has been able to proudly satisfy all its customers. And gain a significant position among companies and institutions.
+            </p>
+          </div>
+        </div>
+         <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-lg-8" style="direction: rtl;">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
+                <li class="breadcrumb-item"><a href="{% url 'pyngo:index' %}"> home page</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Consultation request </li>
+              </ol>
+            </nav>
+            <h1 class="fg-white text-center"> web design with pyngoweb</h1>
+          </div>
+        </div>
+      </div>
+  </div> <!-- .page-banner -->
+
+  <main>
+    <div class="container">
+    <div class="row" style="direction: rtl;">
+        {% for ntf in all_notify_unread %}
+        <div class="col-sm-12 mt-2 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title" style="float:right;">{{ ntf.timestamp|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</h5>
+              <p class="card-text"  style="float: right;">{{ ntf.description }}</p>
+              <a href="{% url 'notifications:mark_as_read' ntf.slug %}?next={% url 'pyngo:all_notifications' %}" class="btn mt-5 btn-primary">Checked out??</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% for ntf in all_notify_read %}
+        <div class="col-sm-12 mt-2  col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"  style="float: right;">{{ ntf.timestamp|to_jalali:'%Y/%m/%d _ %H:%M:%S' }}</h5>
+              <p class="card-text" style="float:right;">{{ ntf.description }}</p>
+              
+              <a class="btn fg-light btn-success mt-5" > Checked out</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+  {% endif %}
 {% endblock %}
 
 {% block javascript %}

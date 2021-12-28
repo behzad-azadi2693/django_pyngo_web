@@ -12,13 +12,13 @@
 
 
 {% if LANGUAGE_CODE == 'fa' %}
-<header>
+<header id='header'>
     <div class="top-bar bg-primary">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-8">
             <div class="d-inline-block">
-              <span class="mai-mail fg-light"></span> <a href="gmail:pyngoweb@gmail.com" class="fg-light">pyngoweb@gmail.com</a>
+              <span class="mai-call fg-light"> </span>  <a href="tel:08733178466" class="fg-light pl-2"> 087-33178466</a>
             </div>
             <a class="fg-danger ml-2" href="{% url 'pyngo:language' 'en' %}">Language English</a>
 
@@ -50,7 +50,7 @@
       </div> <!-- .container -->
     </div> <!-- .top-bar -->
 
-    <nav class="navbar navbar-expand-md navbar-light" style="direction: rtl;" id="navbar_top">
+    <nav class="navbar navbar-expand-md navbar-light" id='navbar_top' style="direction: rtl;">
       <div class="container">
         <a href="{{index}}" class="navbar-brand"><img src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>
 
@@ -75,9 +75,6 @@
                 <a href="{{about_us}}" class="nav-link">درباره ما</a>
             </li>
           </ul>
-          <ul class="navbar-nav" style="direction: ltr;">
-            <span class="mai-call fg-primary"> </span>  <a href="tel:08733178466" class="fg-primary pl-2"> 087-33178466</a>
-        </ul>
         </div>
        
       </div> <!-- .container -->
@@ -93,7 +90,7 @@
       <div class="row align-items-center">
         <div class="col-md-8">
           <div class="d-inline-block">
-            <span class="mai-mail fg-light"></span> <a href="gmail:contact@gmail.com" class="fg-light">contact@mail.com</a>
+            <span class="mai-call fg-light"> </span>  <a href="tel:+989188688569" class="fg-light pl-2"> +98-9188688569</a>
           </div>
           <a class="fg-danger ml-2" href="{% url 'pyngo:language' 'fa' %}">زبان فارسی</a> 
           {% if request.user.is_authenticated and request.user.is_admin %}
@@ -125,7 +122,7 @@
     </div> <!-- .container -->
   </div> <!-- .top-bar -->
 
-  <nav class="navbar navbar-expand-md navbar-light" id="navbar_top">
+  <nav class="navbar navbar-expand-md navbar-light">
     <div class="container">
       <a href="{{index}}" class="navbar-brand"><img
         src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>

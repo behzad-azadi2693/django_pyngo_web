@@ -14,7 +14,8 @@
        <meta property="og:type" content="website">
        <meta name="google-site-verification" content="Na6GXkDXfUkPiK1sE43nbWVK5xsVJNKRgTxvYZ4GEz8" />
 {% endblock %}
-{% block title %} | صفحه اصلی {% endblock %}
+
+{% block title %} {% if LANGUAGE_CODE == 'fa' %}| صفحه اصلی  {% elif LANGUAGE_CODE == 'en' %} | home page {% endif %} {% endblock %}
 
 
 
@@ -347,7 +348,7 @@
           </div>
           <div class="col-lg-6 py-3">
             <div class="subhead" > about us</div> <br>
-            <h2 class="title-section">We sre<span class="fg-primary">a young team</span>to grow your business</h2>
+            <h2 class="title-section">We are <span class="fg-primary"> a young team </span> to grow your business</h2>
 
             <p style="text-align:justify;">
               Talk to us about your business so we can tell you how you can grow your business and learn about its challenges. We can provide a complete report for you and your business, give you ideas or ideas Develop you in a better way

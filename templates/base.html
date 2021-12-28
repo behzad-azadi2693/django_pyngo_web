@@ -8,7 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="طراحی سایت ,ساخت وب سایت, طراحی سایت پینگو وب,پینگو وب,طراحی سایت در ایران, web design, web application, pyngoweb">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>پینگو وب {% block title %}{% endblock %}</title>
+ 
+    <title> {% if LANGUAGE_CODE == 'fa' %}  پینگو وب {% else %} pyngoweb {% endif %} {% block title %}{% endblock %}</title>
+ 
+  
+  
   {% block meta %}{% endblock %}
 
   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
@@ -50,13 +54,13 @@
         document.addEventListener("DOMContentLoaded", function(){
           window.addEventListener('scroll', function() {
               if (window.scrollY > 50) {
-                document.getElementById('navbar_top').classList.add('fixed-top');
+                document.getElementById('header').classList.add('fixed-top');
                 document.getElementById('navbar_top').style.backgroundColor='#F0F8FF';
                 // add padding top to show content behind navbar
                 navbar_height = document.querySelector('.navbar').offsetHeight;
                 document.body.style.paddingTop = navbar_height + 'px';
               } else {
-                document.getElementById('navbar_top').classList.remove('fixed-top');
+                document.getElementById('header').classList.remove('fixed-top');
                 document.getElementById('navbar_top').style.backgroundColor='';
                  // remove padding top from body
                 document.body.style.paddingTop = '0';

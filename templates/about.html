@@ -3,10 +3,13 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-{% block title %} | درباره ما {% endblock %}
+{% block title %}
+    {% if LANGUAGE_CODE == 'fa' %}| درباره ما  {% elif LANGUAGE_CODE == 'en' %} |about us {% endif %}
+{% endblock %}
 
 {% block body %}
 {% if LANGUAGE_CODE == 'fa' %}
+
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
@@ -85,7 +88,7 @@
     <div class="page-section">
     
   </main>
-  {% endif %}
+   {% endif %}
   {% if LANGUAGE_CODE == 'en' %}
 <!-- Back to top button -->
 <div class="back-to-top"></div>
@@ -94,7 +97,7 @@
   <div class="page-banner ml-3 mr-3 bg-img bg-img-parallax" style="background-image: url({% static 'assets/img/about.png' %});height:30%;">
     <div class="row">
       <div class="col-lg-6 col-sm-12">
-        <h5 class="bg-primary col-6 mt-5 text-right">about pyngo web</h5>
+        <h5 class="bg-primary col-6 mt-5">about pyngo web</h5>
         <p class="m-3 fg-light  text-justify">
           Pingo Web Design Group has a professional team with a brilliant background in the field of programming and graphic design by providing site design and SEO services at the highest quality and programming standards in accordance with Google algorithms has been able to proudly satisfy all its customers. And gain a significant position among companies and institutions.
         </p>
