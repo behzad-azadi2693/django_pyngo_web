@@ -6,6 +6,7 @@ from notifications.signals import notify
 from django.contrib.auth import get_user_model
 from notifications.models import Notification
 from django.utils import translation
+from django.utils.translation import gettext_lazy as _
 
 def language(request, lang):
     if lang in ['fa','en']:
@@ -30,15 +31,15 @@ def contact(request):
                 admin = get_user_model().objects.get(id=1)
                 msg = f'{name}-{phone}'
                 notify.send(admin, recipient=admin, verb='meessage', description=msg)
-                messages.success(request, 'شماره تماس شما با موفقیت ثبت شد کارشناسان ما در اسرع وقت با شما تماس خواهند گرفت', 'primary')
+                messages.success(request, _('Your contact number has been successfully registered Our experts will contact you as soon as possible'), 'primary')
                 print('ok')
                 return redirect('pyngo:index')
             else:
-                messages.warning(request, 'شماره تماس شما با موفقیت ثبت نشد لطفا مجدد اقدام نمایید', 'warning')
+                messages.warning(request, _('Your contact number was not registered successfully. Please try again'), 'warning')
                 print('not ok')
                 return redirect('pyngo:index')
         else:
-            messages.warning(request, 'لطفا فیلد شماره و نام را پرکنید و مجدد اقدام نمایید', 'warning')
+            messages.warning(request, _('Please fill in the number and name field and try again'), 'warning')
             return redirect('pyngo:index')
     else:
         return redirect('pyngo:index')
@@ -74,11 +75,11 @@ def contact_us(request):
         form = ContactUsForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'پیغام شما ارسال شد منتظر تماس از جانب تیم پیمگو وب باشید', 'primary')
+            messages.success(request, _('Your message has been sent. Wait for a call from the pyngo Web team'), 'primary')
             return redirect('pyngo:contact_us')
         else:
             form = ContactUsForm(request.POST)
-            messages.success(request, 'لطفا در پر کردن فیلدها دقت فرمایید', 'warning')
+            messages.success(request,_('Please be careful filling in the fields') , 'warning')
             return render(request, 'contact.html', {'form':form})
     else:
         form = ContactUsForm()

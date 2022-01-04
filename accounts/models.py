@@ -2,11 +2,12 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from datetime import datetime, timedelta
+from django.utils.translation import gettext_lazy as _
 
 class MyUserManager(BaseUserManager):
     def create_user(self, phone, password):
         if not phone:
-            raise ValueError('لطفا شماره خود را وارد کنید')
+            raise ValueError(_('Please enter your number'))
         user = self.model(phone=phone)
         user.set_password(password)
         user.save(using=self._db)
@@ -21,23 +22,23 @@ class MyUserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
 
     phone_regex = RegexValidator(regex=r'^\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
-    phone = models.CharField(validators=[phone_regex], max_length=17, unique=True, verbose_name="your phone number") 
+    phone = models.CharField(validators=[phone_regex], max_length=17, unique=True, verbose_name=_('your phone number')) 
     otp = models.PositiveIntegerField(null=True, blank=True)
     otp_create_time = models.DateTimeField(auto_now=True, null=True, blank=True)
     
-    is_active = models.BooleanField(default=True, verbose_name='کاربر فعال باشد؟')
-    is_admin = models.BooleanField(default=False, verbose_name='کاربر ادمین باشد؟')
-    phone_check = models.BooleanField(default=False, verbose_name = 'تلفن تایید شده؟')
+    is_active = models.BooleanField(default=True, verbose_name=_('user enabled?'))
+    is_admin = models.BooleanField(default=False, verbose_name=_('user admin?'))
+    phone_check = models.BooleanField(default=False, verbose_name = _('verified phone?'))
 
     objects = MyUserManager()
     USERNAME_FIELD = 'phone'
 
     class Meta:
-        verbose_name = 'کاربر'
-        verbose_name_plural = 'کاربران'
+        verbose_name = _('User')
+        verbose_name_plural = _('Users')
 
     def __str__(self) -> str:
-        return f'نام کاربری:{self.phone}'
+        return f'{_("user number")}:{self.phone}'
 
     def has_perm(self, perm, obj=None) -> bool:
         return True

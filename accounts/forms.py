@@ -1,17 +1,18 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.utils.translation import gettext_lazy as _
 
 messages = {
-    'required':'این فیلد الزامی است',
-    'invalid':'این فیلد صحیح نمیباشد',
-    'max_length':'اندازه فیلد بیشتر از حد مجاز',
-    'min_length':'اندازه فیلد کمتر از حد مجاز',
+    'required':_('this field is required'),
+    'invalid':_('this field is incorrect'),
+    'max_length':_('field size larger than allowed'),
+    'min_length':_('field size less than allowed'),
 }
 
 class UserCreationForm(forms.ModelForm):
-    password = forms.CharField(label='پسورد', widget=forms.PasswordInput)
-    password_confierm = forms.CharField(label='تکرار پسورد', widget=forms.PasswordInput)
+    password = forms.CharField(label=_('password'), widget=forms.PasswordInput)
+    password_confierm = forms.CharField(label=_('password confierm'), widget=forms.PasswordInput)
 
     class Meta:
         models = get_user_model()
@@ -20,7 +21,7 @@ class UserCreationForm(forms.ModelForm):
     def clean_password_confierm(self):
         cd = self.cleaned_data
         if cd['password'] and cd['password_confierm'] and cd['password'] != cd['password_confierm']:
-            raise forms.ValidationError("پسورد و تکرار پسورد یکسان نیست")
+            raise forms.ValidationError('Password and password are not the same')
 
         return cd['password_confierm']
 

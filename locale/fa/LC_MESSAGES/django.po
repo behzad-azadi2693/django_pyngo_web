@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-29 18:19+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: Pyngo/forms.py:17
+msgid "your name..."
+msgstr "نام شما..."
+
+#: Pyngo/forms.py:18
+msgid "your email..."
+msgstr ""
+
+#: Pyngo/forms.py:19
+msgid "subjecct..."
+msgstr ""
+
+#: Pyngo/forms.py:20
+msgid "message..."
+msgstr ""
+
+#: Pyngo/models.py:8 Pyngo/models.py:21
+msgid "your name"
+msgstr ""
+
+#: Pyngo/models.py:10 accounts/models.py:25
+msgid "your phone number"
+msgstr ""
+
+#: Pyngo/models.py:22
+msgid "your email"
+msgstr ""
+
+#: Pyngo/models.py:23
+msgid "subject"
+msgstr ""
+
+#: Pyngo/models.py:24
+msgid "message"
+msgstr ""
+
+#: Pyngo/models.py:28 Pyngo/models.py:29
+msgid "contact us"
+msgstr ""
+
+#: Pyngo/views.py:34
+msgid ""
+"Your contact number has been successfully registered Our experts will "
+"contact you as soon as possible"
+msgstr ""
+
+#: Pyngo/views.py:38
+msgid "Your contact number was not registered successfully. Please try again"
+msgstr ""
+
+#: Pyngo/views.py:42
+msgid "Please fill in the number and name field and try again"
+msgstr ""
+
+#: Pyngo/views.py:78
+msgid "Your message has been sent. Wait for a call from the pyngo Web team"
+msgstr ""
+
+#: Pyngo/views.py:82
+msgid "Please be careful filling in the fields"
+msgstr ""
+
+#: accounts/models.py:10
+msgid "Please enter your number"
+msgstr ""
+
+#: accounts/models.py:29
+msgid "user enabled?"
+msgstr ""
+
+#: accounts/models.py:30
+msgid "user admin?"
+msgstr ""
+
+#: accounts/models.py:31
+msgid "verified phone?"
+msgstr ""
+
+#: accounts/models.py:37
+msgid "User"
+msgstr ""
+
+#: accounts/models.py:38
+msgid "Users"
+msgstr ""

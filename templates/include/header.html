@@ -84,7 +84,7 @@
 {% endif %}
 
 {%if LANGUAGE_CODE == 'en' %}
-<header>
+<header id="header">
   <div class="top-bar bg-primary">
     <div class="container">
       <div class="row align-items-center">
@@ -122,7 +122,7 @@
     </div> <!-- .container -->
   </div> <!-- .top-bar -->
 
-  <nav class="navbar navbar-expand-md navbar-light">
+  <nav class="navbar navbar-expand-md navbar-light" id="navbar_top">
     <div class="container">
       <a href="{{index}}" class="navbar-brand"><img
         src="{% static 'assets/img/logo.png' %}" alt="pyngoweb" width="150" height="30"></a>
