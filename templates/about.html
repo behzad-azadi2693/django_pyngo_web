@@ -3,6 +3,14 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
+{% block meta_description %}about pyngoweb, درباره پینگو وب{% endblock meta_description %}
+
+{% block meta_keywords %}
+    pyngowe, website pyngoweb,pyngo,website design pyngoweb,web design,
+    وب سایت پینگو وب,طراحی سایت در سنندج,پینگووب,طراحی سایت,طراحی سایت ارزان,پینگو,طراحی سایت پینگو وب,طراحی سایت  ,درباره پینگو وب,پینگووب 
+{% endblock meta_keywords %}
+
+
 {% block title %}
     {% if LANGUAGE_CODE == 'fa' %}| درباره ما  {% elif LANGUAGE_CODE == 'en' %} |about us {% endif %}
 {% endblock %}

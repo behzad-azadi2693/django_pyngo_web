@@ -20,7 +20,16 @@
             <div class="d-inline-block">
               <span class="mai-call fg-light"> </span>  <a href="tel:08733178466" class="fg-light pl-2"> 087-33178466</a>
             </div>
-            <a class="fg-danger ml-2" href="{% url 'pyngo:language' 'en' %}">Language English</a>
+
+            <div class="d-inline-block ml-2 fg-danger">
+              <span class="dropdown-toggle" type="text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <a href="" class='fg-danger' > فارسی</a>
+              </span>
+              <div class="dropdown-menu bg-primary">
+                <a class="fg-light ml-2" href="{% url 'pyngo:language' 'fa' %}?next={{ request.get_full_path }}"> زبان فارسی </a>  <br>
+                <a class="fg-light ml-2" href="{% url 'pyngo:language' 'en' %}?next={{ request.get_full_path }}">English language</a> 
+              </div>
+            </div>
 
             {% if request.user.is_authenticated and request.user.is_admin %}
           
@@ -92,7 +101,15 @@
           <div class="d-inline-block">
             <span class="mai-call fg-light"> </span>  <a href="tel:+989188688569" class="fg-light pl-2"> +98-9188688569</a>
           </div>
-          <a class="fg-danger ml-2" href="{% url 'pyngo:language' 'fa' %}">زبان فارسی</a> 
+          <div class="d-inline-block ml-2 fg-danger">
+            <span class="dropdown-toggle" type="text" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <a href="" class='fg-danger' >English</a>
+            </span>
+            <div class="dropdown-menu bg-primary">
+              <a class="fg-light ml-2" href="{% url 'pyngo:language' 'fa' %}?next={{ request.get_full_path }}"> زبان فارسی </a>  <br>
+              <a class="fg-light ml-2" href="{% url 'pyngo:language' 'en' %}?next={{ request.get_full_path }}">English language</a> 
+            </div>
+          </div>
           {% if request.user.is_authenticated and request.user.is_admin %}
           <div class="d-inline-block">
             <a href="{% url 'pyngo:all_notifications' %}" class="fg-light">

@@ -3,14 +3,14 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-{% block meat %}
-<meta name="description" content=" خدمات طراحی سایت پینگو وب">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://pyngoweb.ir/services/">
-<meta property="og:title" content="پینگو وب | خدمات ما">
-<meta property="og:description" content="ساخت و طراحی وب سایت و وب اپلیکیشن در ایران با کمترین قیمت">
-<meta property="og:image" content="{% static 'assets/img/logo.png' %}">
-{% endblock %}
+
+{% block meta_description %} خدمات سایت پینگووب service website pyngoweb {% endblock meta_description %}
+{% block meta_keywords %}
+    pyngowe, website pyngoweb,pyngo,website design pyngoweb,web design,
+    وب سایت پینگو وب,طراحی سایت در سنندج,پینگووب,طراحی سایت,طراحی سایت ارزان,پینگو,طراحی سایت پینگو وب,طراحی سایت
+    ,خدمات طراحی سایت,خدمات پینگو وب,پینگووب 
+{% endblock meta_keywords %}
+
 
 {% block title %}{% if LANGUAGE_CODE == 'fa' %} | خدمات ما  {%  elif  LANGUAGE_CODE == 'en' %} | our services {% endif %} {% endblock %}
 

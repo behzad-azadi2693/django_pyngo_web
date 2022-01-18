@@ -7,11 +7,15 @@ from django.contrib.auth import get_user_model
 from notifications.models import Notification
 from django.utils import translation
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
 
 def language(request, lang):
-    if lang in ['fa','en']:
-        translation.activate(lang)
-        return redirect('pyngo:index')
+    path = request.GET.get('next')
+    for language_cod, language_name in settings.LANGUAGES:
+        if language_cod in path:
+            translation.activate(lang)
+            return redirect(path.replace(language_cod, lang))
+
     return redirect('pyngo:index')
 
 
