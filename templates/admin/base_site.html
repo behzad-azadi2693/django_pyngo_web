@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% for language_code, language_name in LANGUAGES %}
-<a href="{% url 'sanof:language' language_code %}?next={{ request.get_full_path }}">{{ language_name }}</a>
+<a href="{% url 'pyngo:language' language_code %}?next={{ request.get_full_path }}">{{ language_name }}</a>
 {% endfor %}
 
 {% block extrastyle %}
