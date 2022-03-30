@@ -24,6 +24,7 @@ services:
         command: sh -c "python3 manage.py makemigrations && 
                         python3 manage.py migrate --no-input && 
                         python3 manage.py collectstatic --no-input && 
+                        python manage.py createsuperuser --user admin --email admin@gmail.com --noinput; &&
                         uwsgi --ini uwsgi.ini"
         depends_on: 
             - postgres
