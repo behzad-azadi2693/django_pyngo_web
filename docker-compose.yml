@@ -28,7 +28,9 @@ services:
             - "5050:80"
         volumes: 
             - ./data/pgadmin:/var/lib/pgadmin/data
-
+        networks:
+            - main
+            
     app:
         build: .
         container_name: app
